@@ -18,10 +18,16 @@ COURT_LEVEL = (
 
 class PracticeArea(models.Model):
     area = models.CharField(max_length=250)
+    
+    def __unicode__(self):
+        return unicode(self.area)
 
 class PracticeCourt(models.Model):
     court = models.CharField(max_length=250)
     level = models.CharField(max_length=2, choices=COURT_LEVEL)
+
+    def __unicode__(self):
+        return unicode(self.court + ',' + self.level)
  
 class LawyerAccount(models.Model):
     user = models.OneToOneField(User)      
@@ -38,4 +44,4 @@ class LawyerAccount(models.Model):
     status =  models.CharField(max_length=2, choices=STATUS_CHOICES,default='PB')
 
     def __unicode__(self):
-        return unicode(self.name)
+        return unicode(self.user)
