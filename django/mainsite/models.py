@@ -41,7 +41,7 @@ class LawyerAccount(models.Model):
     hourly_fee = models.IntegerField(blank=True,null=True)
     halfhour_fee = models.IntegerField(blank=True,null=True)
 
-    status =  models.CharField(max_length=2, choices=STATUS_CHOICES,default='PB')
+    status =  models.CharField(max_length=2, choices=STATUS_CHOICES,default='AP')
 
     def __unicode__(self):
         return unicode(self.user)

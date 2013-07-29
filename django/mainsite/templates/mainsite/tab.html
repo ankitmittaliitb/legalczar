@@ -1,0 +1,129 @@
+<div id="sTab" class="ui-tabs">
+						<ul class="ui-tabs-nav">
+							<li><a href="#tabs-1">Browse Lawyer</a></li>
+							<li><a href="#tabs-2">Get a Call</a></li>
+							<li><a href="#tabs-3">Submit Question</a></li>
+						</ul>
+						<div id="tabs-1" class="ui-tabs-panel">
+							<div class='browse_lawyers_block'>
+								<div class='state'>
+									<div class='label'>Relevant state:</div>
+									<select class="chosen-select" id="state_id" name="state[id]"><option value="">All</option>
+										<option value="1">Alaska</option>
+										<option value="54">American Samoa</option>
+										<option value="2">Arizona</option>
+										<option value="3">Arkansas</option>
+										<option value="4">California</option>
+										<option value="5">Colorado</option>
+										<option value="6">Connecticut</option>	
+									</select>									
+								</div>
+								<div class='practice_area'>
+									<div class='label'>Type of Legal Issue:</div>
+									<select class="chosen-select" id="practice_area_id" name="practice_area[id]"><option value="">Any</option>
+										<option class="parent" data-is-national="false" name_for_url="Criminal-Defense" parent="true" value="116">Criminal Defense</option>
+										<option class="child" data-is-national="false" name_for_url="Court-Proceedings" parent="false" value="118">Court Proceedings</option>
+										<option class="child" data-is-national="false" name_for_url="Drug-cases" parent="false" value="119">Drug cases</option>
+										<option class="parent" data-is-national="false" name_for_url="Family" parent="true" value="36">Family</option>
+										<option class="child" data-is-national="false" name_for_url="Adoptions" parent="false" value="53">Adoptions</option>
+										<option class="child" data-is-national="false" name_for_url="Child-custody" parent="false" value="52">Child custody</option>
+										<option class="child" data-is-national="false" name_for_url="Divorce" parent="false" value="50">Divorce</option>
+										<option class="child" data-is-national="false" name_for_url="Emancipation" parent="false" value="132">Emancipation</option>
+										<option class="child" data-is-national="false" name_for_url="Juvenile-Dependency" parent="false" value="135">Juvenile Dependency</option>
+										<option class="parent" data-is-national="true" name_for_url="Immigration" parent="true" value="38">Immigration</option>
+										<option class="child" data-is-national="true" name_for_url="Deportation" parent="false" value="65">Deportation</option>
+										<option class="child" data-is-national="true" name_for_url="Green-card-application" parent="false" value="61">Green card application</option>
+										<option class="child" data-is-national="true" name_for_url="H1-B-Visas" parent="false" value="64">H1-B Visas</option>
+										<option class="child" data-is-national="true" name_for_url="Marriage-based-citizenship" parent="false" value="63">Marriage-based citizenship</option>
+										<option class="child" data-is-national="true" name_for_url="Travel-Visas" parent="false" value="60">Travel Visas</option>
+										<option class="parent" data-is-national="false" name_for_url="Estate-Planning" parent="true" value="43">Estate Planning</option>
+										<option class="child" data-is-national="false" name_for_url="Creating-a-will" parent="false" value="83">Creating a will</option>
+										<option class="child" data-is-national="false" name_for_url="Healthcare-directives" parent="false" value="85">Healthcare directives</option>
+									</select>
+								</div>
+							</div>
+							<a href="/lawyers" id="browse_lawyers_button"><span class='btn hp-cta-btn'>Browse Lawyers</span></a>
+						</div>					
+
+						<div id="tabs-2" class="ui-tabs-panel">						
+							<div class='get_a_call_block'>
+								<div class='state'>
+									<div class='label'>Relevant state:</div>
+									<select class="chosen-select" id="call_state_id" name="state_id" required="required"><option value=""></option>
+										<option value="1">Alaska</option>
+										<option value="54">American Samoa</option>
+										<option value="2">Arizona</option>
+										<option value="3">Arkansas</option>
+										<option value="4">California</option>
+										<option value="5">Colorado</option>
+										<option value="6">Connecticut</option>
+										<option value="7">Delaware</option>
+										<option value="50">District of Columbia</option>
+										<option value="51">England and Wales</option>
+										<option value="8">Florida</option>
+										<option value="9">Georgia</option>
+										<option value="10">Hawaii</option>
+									</select>
+								</div>
+								<div class='practice_area'>
+									<div class='label'>Type of Legal Issue:</div>
+									<select class="chosen-select" id="practice_area_id" name="practice_area[id]"><option value="">Any</option>
+										<option class="parent" data-is-national="false" name_for_url="Criminal-Defense" parent="true" value="116">Criminal Defense</option>
+										<option class="child" data-is-national="false" name_for_url="Court-Proceedings" parent="false" value="118">Court Proceedings</option>
+										<option class="child" data-is-national="false" name_for_url="Drug-cases" parent="false" value="119">Drug cases</option>
+										<option class="parent" data-is-national="false" name_for_url="Family" parent="true" value="36">Family</option>
+										<option class="child" data-is-national="false" name_for_url="Adoptions" parent="false" value="53">Adoptions</option>
+										<option class="child" data-is-national="false" name_for_url="Child-custody" parent="false" value="52">Child custody</option>
+										<option class="child" data-is-national="false" name_for_url="Divorce" parent="false" value="50">Divorce</option>
+										<option class="child" data-is-national="false" name_for_url="Emancipation" parent="false" value="132">Emancipation</option>
+										<option class="child" data-is-national="false" name_for_url="Juvenile-Dependency" parent="false" value="135">Juvenile Dependency</option>
+										<option class="parent" data-is-national="true" name_for_url="Immigration" parent="true" value="38">Immigration</option>
+										<option class="child" data-is-national="true" name_for_url="Deportation" parent="false" value="65">Deportation</option>
+										<option class="child" data-is-national="true" name_for_url="Green-card-application" parent="false" value="61">Green card application</option>
+										<option class="child" data-is-national="true" name_for_url="H1-B-Visas" parent="false" value="64">H1-B Visas</option>
+										<option class="child" data-is-national="true" name_for_url="Marriage-based-citizenship" parent="false" value="63">Marriage-based citizenship</option>
+										<option class="child" data-is-national="true" name_for_url="Travel-Visas" parent="false" value="60">Travel Visas</option>
+										<option class="parent" data-is-national="false" name_for_url="Estate-Planning" parent="true" value="43">Estate Planning</option>
+										<option class="child" data-is-national="false" name_for_url="Creating-a-will" parent="false" value="83">Creating a will</option>
+										<option class="child" data-is-national="false" name_for_url="Healthcare-directives" parent="false" value="85">Healthcare directives</option>
+									</select>
+								</div>
+								<div class='phone'>
+									<div class='label'>Phone number:</div>
+									<div class='phone_text_box'>
+										<input class="phone_number phone_mask" id="phone" name="phone_number" placeholder="Phone number" rel="twipsy" required="required" type="text" />
+									</div>
+								</div>
+								<button class='btn hp-cta-btn'>Get Called</button>
+
+
+
+
+							</div>
+						</div>
+						<div id="tabs-3" class="ui-tabs-panel">
+							<div class='no-margin' id='autoselect_landing_wraper'>
+								<div>
+									<textarea id="question_body" name="question[body]" placeholder="Describe your legal situation.">
+									</textarea>
+								</div>
+								<input class="" id="autoselect_question_submit_button" name="commit" type="submit" value="Ask" />
+								<div class='question_state' id='question_state'>
+									<div class='question_state_bott'>
+										<select id="question_state_id" name="question[state_id]"><option value="">Not specified</option>
+											<option value="1">Alaska</option>
+											<option value="54">American Samoa</option>
+											<option value="2">Arizona</option>
+											<option value="3">Arkansas</option>
+											<option value="4">California</option>
+											<option value="5">Colorado</option>
+											<option value="6">Connecticut</option></select>
+										</div>
+									</div>
+									<div class='actions'>
+										<input id="second_autoselect_question_submit_button" name="commit" type="submit" value="Ask" />
+									</div>
+
+								</div>
+							</div>
+						</div>

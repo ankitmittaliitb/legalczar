@@ -1,0 +1,69 @@
+.jcarousel-skin-tango .jcarousel-direction-rtl{direction:rtl}
+.jcarousel-skin-tango .jcarousel-container-horizontal{display:block;margin:0 auto;width:375px;height:550px}
+.jcarousel-skin-tango .jcarousel-clip{overflow:hidden}
+.jcarousel-skin-tango .jcarousel-clip-horizontal{width:360px;height:550px}
+.jcarousel-skin-tango .jcarousel-item{width:375px;height:550px}
+.jcarousel-skin-tango .jcarousel-item-horizontal{margin-left:0;margin-right:15px}
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal{margin-left:10px;margin-right:0}
+.jcarousel-skin-tango .jcarousel-item-placeholder{background:#fff;color:#000}
+.jcarousel-skin-tango .jcarousel-next-horizontal{position:absolute;left:45px;top:110px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll 0 -5px transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-tango .jcarousel-next-horizontal:hover,.jcarousel-skin-tango .jcarousel-next-horizontal:focus{background-position:0px -40px;opacity:1}
+.jcarousel-skin-tango .jcarousel-next-horizontal:active{background-position:0px -5px}
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active{cursor:default;opacity:0.5}
+.jcarousel-skin-tango .jcarousel-prev-horizontal{position:absolute;top:110px;right:45px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll -32px 0 transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-tango .jcarousel-prev-horizontal:hover,.jcarousel-skin-tango .jcarousel-prev-horizontal:focus{background-position:-30px -35px;opacity:1;display:block}
+.jcarousel-skin-tango .jcarousel-prev-horizontal:active{background-position:-32px 0}
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active{cursor:default;opacity:0.5}
+.jcarousel-skin-press:hover .jcarousel-prev-horizontal{background-position:0px -40px;opacity:1}
+.jcarousel-skin-press:hover .jcarousel-next-horizontal{background-position:-32px -39px;opacity:1}
+.jcarousel-skin-press .press_item{margin-right:0px !important}
+.jcarousel-skin-press .jcarousel-direction-rtl{direction:rtl}
+.jcarousel-skin-press .jcarousel-container-horizontal{width:100%;margin-top:30px;margin-bottom:20px}
+.jcarousel-skin-press .jcarousel-clip{overflow:hidden}
+.jcarousel-skin-press .jcarousel-clip-horizontal{width:93%;margin-left:3.5%;left:-26px}
+.jcarousel-skin-press .jcarousel-item{width:200px}
+.jcarousel-skin-press .jcarousel-item-horizontal{margin-right:0;margin-left:30px !important}
+.jcarousel-skin-press .jcarousel-item-placeholder{background:#fff;color:#000}
+.jcarousel-skin-press .jcarousel-prev-horizontal{position:absolute;top:70px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll 0 -5px transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-press .jcarousel-prev-horizontal:hover,.jcarousel-skin-press .jcarousel-prev-horizontal:focus{background-position:0px -40px;opacity:1}
+.jcarousel-skin-press .jcarousel-prev-horizontal:active{background-position:0px -5px}
+.jcarousel-skin-press .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-press .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-press .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-press .jcarousel-prev-disabled-horizontal:active{cursor:default;opacity:0.5}
+.jcarousel-skin-press .jcarousel-next-horizontal{position:absolute;top:70px;right:0px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll -32px -4px transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-press .jcarousel-next-horizontal:hover,.jcarousel-skin-press .jcarousel-next-horizontal:focus{background-position:-32px -39px;opacity:1;display:block}
+.jcarousel-skin-press .jcarousel-next-horizontal:active{background-position:-32px -4px}
+.jcarousel-skin-press .jcarousel-next-disabled-horizontal,.jcarousel-skin-press .jcarousel-next-disabled-horizontal:hover,.jcarousel-skin-press .jcarousel-next-disabled-horizontal:focus,.jcarousel-skin-press .jcarousel-next-disabled-horizontal:active{cursor:default;opacity:0.5}.jcarousel-skin-mini-profiles:hover 
+.jcarousel-prev-horizontal{background-position:0px -40px;opacity:1}
+.jcarousel-skin-mini-profiles:hover .jcarousel-next-horizontal{background-position:-32px -39px;opacity:1}
+.jcarousel-skin-mini-profiles #mini-profiles_carousel{min-height:220px}
+.jcarousel-skin-mini-profiles .row.lawyer{text-align:left}
+.jcarousel-skin-mini-profiles .avatar{padding:5px 5px 5px 5px;float:left;border:1px solid #aaafb8;-moz-border-radius:5px;-webkit-border-radius:5px}
+.jcarousel-skin-mini-profiles .avatar a{border-bottom:0}.jcarousel-skin-mini-profiles .avatar img{width:100px}
+.jcarousel-skin-mini-profiles .available-appointments ul{float:left}
+.jcarousel-skin-mini-profiles .available-appointments ul li{font-size:11px;width:104px;text-align:center;margin:10px 0}
+.jcarousel-skin-mini-profiles .times_wrapper{text-align:center;bottom:10px;right:0px;width:210px;position:absolute;padding-top:20px;background-color:#f1f7fb}
+.jcarousel-skin-mini-profiles .times_wrapper .times{text-decoration:none;font-size:11px;font-weight:bold;padding-left:20px;display:inline-block;background:url(/static/mainsite/img/slider/clock_icon.png) no-repeat;height:20px}
+.jcarousel-skin-mini-profiles .times_wrapper .times .grey{display:inline;width:50px;color:gray}
+.jcarousel-skin-mini-profiles .jcarousel-container-horizontal{width:100%;margin-top:30px;margin-bottom:20px}
+.jcarousel-skin-mini-profiles .jcarousel-clip{overflow:hidden}.jcarousel-skin-mini-profiles .jcarousel-clip-horizontal{width:93%;padding-left:13.5%;left:-26px}
+.jcarousel-skin-mini-profiles .jcarousel-item{width:750px}.jcarousel-skin-mini-profiles .jcarousel-item-horizontal{margin-right:0;margin-left:30px !important}
+.jcarousel-skin-mini-profiles .jcarousel-item-placeholder{background:#fff;color:#000}
+.jcarousel-skin-mini-profiles .jcarousel-prev-horizontal{position:absolute;top:80px;left:60px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll 0 -5px transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-mini-profiles .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-mini-profiles .jcarousel-prev-horizontal:focus{background-position:0px -40px;opacity:1}
+.jcarousel-skin-mini-profiles .jcarousel-prev-horizontal:active{background-position:0px -5px}
+.jcarousel-skin-mini-profiles .jcarousel-prev-disabled-horizontal,.jcarousel-skin-mini-profiles .jcarousel-prev-disabled-horizontal:hover,.jcarousel-skin-mini-profiles .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-mini-profiles .jcarousel-prev-disabled-horizontal:active{cursor:default;opacity:0.5}
+.jcarousel-skin-mini-profiles .jcarousel-next-horizontal{position:absolute;top:80px;right:60px;height:30px;width:25px;cursor:pointer;background:url(/static/mainsite/img/slider/slider_arrows.png) no-repeat scroll -32px -4px transparent;opacity:0.3;z-index:10}
+.jcarousel-skin-mini-profiles .jcarousel-next-horizontal:hover,.jcarousel-skin-mini-profiles .jcarousel-next-horizontal:focus{background-position:-32px -39px;opacity:1;display:block}
+.jcarousel-skin-mini-profiles .jcarousel-next-horizontal:active{background-position:-32px -4px}
+.jcarousel-skin-mini-profiles .jcarousel-next-disabled-horizontal,.jcarousel-skin-mini-profiles .jcarousel-next-disabled-horizontal:hover,.jcarousel-skin-mini-profiles .jcarousel-next-disabled-horizontal:focus,.jcarousel-skin-mini-profiles 
+.jcarousel-next-disabled-horizontal:active{cursor:default;opacity:0.5}

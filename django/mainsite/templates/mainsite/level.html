@@ -1,0 +1,30 @@
+{% if user.is_authenticated %}
+    {{ user.username }} (<a href='/bb/accounts/logout/'>logout</a>)
+{% endif %}
+
+<h1>Title: {{ level.name | safe }}</h1>
+<h4>SubTitle: {{ level.subtitle | safe }}</h4>
+<p> Desc: {{ level.description | safe }}</p>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<br>
+
+
+<hr>
+<h4>List of pages </h4>
+<ul>
+{% for page in level.page_set.all %}
+	<li> <a href="{% url 'guide:levelwpage' level.id forloop.counter %}">{{page.title}}</a></li>
+{% endfor %}
+</ul>
+
+
+<hr>
+<h4>List of quizes </h4>
+<ul>
+{% for quiz in level.quiz_set.all %}
+	<li> {{quiz.title}}</a></li>
+{% endfor %}
+</ul>
+<hr>
