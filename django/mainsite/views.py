@@ -9,13 +9,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request ):
-    data = request.GET
+    #data = request.GET
 
     """try:
         page = Page.objects.get(pk=page_id)
     except Page.DoesNotExist:    
         raise Http404"""
-    return render(request, 'mainsite/home.html', {'domain':request.META['HTTP_HOST'], 'style':data['style']})
+    #'style':data['style']
+    return render(request, 'mainsite/home.html', {'domain':request.META['HTTP_HOST']})
 
 
 
