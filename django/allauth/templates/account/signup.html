@@ -1,0 +1,38 @@
+{% extends "account/base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<!-- <h1>{% trans "Sign Up" %}</h1> -->
+
+
+<div id="login">
+<h2><span class="fontawesome-group"></span>Register</h2>
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+<fieldset>
+
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+   <p><input type="submit" value="Register"></p>
+
+</fieldset>
+
+</form>
+<center><p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p></center>
+</div>
+
+<script type="text/javascript">
+  profile = document.getElementById('id_profile');
+  barid = document.getElementById('id_barid');  
+  if (profile.checked)  barid.style.display='block'      
+</script>
+
+{% endblock %}
+
+

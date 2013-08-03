@@ -1,0 +1,24 @@
+	<header>
+		<div class="header">
+			<div class="wrapper">
+				<a href="/" class="h-logo"></a>
+				<nav>
+					<ul class="h-nav">
+						<li><a href="#" class="h-post-a-job">Find Attorneys</a></li>
+						<li><a href="#">How It Works</a></li>
+						<li><a href="#" class="h-post-a-job">Contact Us</a></li>
+
+					</ul>							
+					<div class="h-login">					
+						{% if request.user.is_authenticated %}
+    						<p>{{ request.user }} <a href="/app/accounts/logout" class="btn btn-normal" >Logout</a></p>
+    					{% else %}
+    						<a href="/accounts/signup" class="btn btn-normal" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-normal" >Login</a>
+    					{% endif %}
+						
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+	</header>

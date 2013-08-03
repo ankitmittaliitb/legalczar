@@ -112,6 +112,27 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",   
+    "django.contrib.auth.context_processors.auth",
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+)
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -126,7 +147,53 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'tinymce',
     'mainsite',
+    'localflavor',
+    'profiles',
+    #for authentication
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    #'allauth.socialaccount.providers.bitly',
+    #'allauth.socialaccount.providers.dropbox',
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.github',
+    #'allauth.socialaccount.providers.google',
+    #'allauth.socialaccount.providers.linkedin',
+    #'allauth.socialaccount.providers.openid',
+    #'allauth.socialaccount.providers.persona',
+    #'allauth.socialaccount.providers.soundcloud',
+    #'allauth.socialaccount.providers.stackexchange',
+    #'allauth.socialaccount.providers.twitch',
+    #'allauth.socialaccount.providers.twitter',
+    #'allauth.socialaccount.providers.vimeo',
+    #'allauth.socialaccount.providers.weibo',
 )
+SOCIALACCOUNT_PROVIDERS = \
+    { 'google':
+        { 'SCOPE': ['https://www.googleapis.com/auth/userinfo.profile'],
+          'AUTH_PARAMS': { 'access_type': 'online' } }}
+
+ACCOUNT_EMAIL_VERIFICATION ="mandatory"
+ACCOUNT_EMAIL_REQUIRED = 'True'
+
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_FORM_CLASS = 'mainsite.forms.SignupForm'
+ACCOUNT_LOGOUT_ON_GET = True
+
+LOGIN_URL = '/app/accounts/login/' 
+LOGIN_REDIRECT_URL = "/app/profile/edit" 
+ACCOUNT_LOGOUT_REDIRECT_URL = '/app/'
+AUTH_PROFILE_MODULE = 'mainsite.baseprofile'
+
+#email server
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'legalczar3'
+EMAIL_HOST_PASSWORD = 'kushal13anil!'
+EMAIL_PORT = 587
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

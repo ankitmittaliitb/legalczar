@@ -1,12 +1,36 @@
-﻿body, html {
+﻿
+@charset "utf-8";
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+ * { 
+    	margin: 0; 
+    }
+body, html {
 	margin: 0;
 	padding: 0;
 	font: 13px 'Helvetica Neue', Helvetica, Arial, Tahoma;
 	color: #3f4042;
 	background: white; 
 	-webkit-font-smoothing: antialiased;
+	height: 100%;
 }
-
+#wrapper {
+    	min-height: 100%;
+    	height:     auto !important;
+    	height:     100%;
+    	margin:     0 auto -247px; /* -44px being the size of the footer */
+    }
+      #header { 
+    	height: 50px; 
+    }
+    #footer, 
+    #push {
+    	height: 247px;	
+    }
 /** existing styles #f2f4f6; **/
 
 .rating-big-static {
@@ -201,10 +225,10 @@ img, form {
 	border-radius: 3px;
 }
 .h-nav li a:hover {
-	color: #e67e22;
+	color: #ff9b00;
 }
 .h-nav li .active {
-	background: orange;
+	background: #ff9b00;
 	color: #fff;
 }
 .h-nav li .active:hover {
@@ -501,8 +525,8 @@ img, form {
 /** homepage styles  #f39c12  #f2f4f6 **/
 
 .hp-hero {
-	background: #f2f4f6 url('/static/mainsite/img/v8/hp-hero.png') 70% 130px no-repeat fixed;
-	height:500px;
+	background: #f2f4f6 url('/static/mainsite/img/v8/hp-hero.png') 70% 180px no-repeat fixed;
+	height:450px;
 	position: relative;
 }
 .hp-hero .wrapper {
@@ -511,7 +535,7 @@ img, form {
 .hp-cta-box {
 	color: #053d5c;
 	position: absolute;
-	top: 120px;
+	top: 70px;
 	left: 10px;
 }
 
@@ -543,7 +567,7 @@ img, form {
 .hp-search {
 	color: #053d5c;
 	position: absolute;
-	top: 260px;
+	top: 210px;
 	left: 10px;
 }
 .hp-press {

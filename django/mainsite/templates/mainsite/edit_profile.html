@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head_title %}Edit Profile | LegalCzar {% endblock %}
+
+{% block content %}
+
+<div id="login">
+
+
+<fieldset>
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Update" /></p>
+           </fieldset>
+</form>
+  </div>
+
+
+{% endblock %}

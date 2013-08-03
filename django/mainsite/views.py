@@ -1,12 +1,13 @@
 # Create your views here.
 from django.http import HttpResponse
-#from guide.models import Level,Page
+from mainsite.models import LawyerProfile
+from mainsite.forms import ProfileEditForm
 from django.template import RequestContext, loader
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-
+from django.views.generic.edit import UpdateView
 
 def home(request ):
     #data = request.GET
@@ -18,7 +19,49 @@ def home(request ):
     #'style':data['style']
     return render(request, 'mainsite/home.html', {'domain':request.META['HTTP_HOST']})
 
+class MessageMixin():
+    def get_object(self, queryset=None):
+        """ Hook to ensure object is owned by request.user. """
+        # obj = super(ProfileEdit, self).get_object()
+        # if not obj.owner == self.request.user:
+        #     raise Http404
+        # return obj
+        return self.request.user.get_profile()
 
+       
+class ProfileEdit(MessageMixin,UpdateView):
+    model=LawyerProfile
+    form_class = ProfileEditForm
+    template_name = "mainsite/profile_edit.html"
+    success_url = "app/profile/"
+    redirect_field_name = None
+
+    
+
+    """ def form_valid(self, form):
+        success_url = self.get_success_url()
+        return form.login(self.request, redirect_url=success_url)
+
+    def get_success_url(self):
+        # Explicitly passed ?next= URL takes precedence
+        ret = (get_next_redirect_url(self.request,
+                                     self.redirect_field_name)
+               or self.success_url)
+        return ret
+
+    def get_context_data(self, **kwargs):
+        ret = super(LoginView, self).get_context_data(**kwargs)
+        ret.update({
+                "signup_url": passthrough_next_redirect_url(self.request,
+                                                            reverse("account_signup"),
+                                                            self.redirect_field_name),
+                "site": Site.objects.get_current(),
+                "redirect_field_name": self.redirect_field_name,
+                "redirect_field_value": self.request.REQUEST.get(self.redirect_field_name),
+                })
+        return ret"""
+
+profile_edit = ProfileEdit.as_view()
 
 """
 @login_required
