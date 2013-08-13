@@ -12,5 +12,5 @@ class LawyerAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register((PracticeArea,PracticeCourt) )
+admin.site.register((ClientProfile,PracticeArea,PracticeCourt) )
 admin.site.register(LawyerProfile, LawyerAdmin)

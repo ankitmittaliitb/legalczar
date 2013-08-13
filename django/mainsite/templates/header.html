@@ -13,7 +13,7 @@
 						{% if request.user.is_authenticated %}
     						<p>{{ request.user }} <a href="/app/accounts/logout" class="btn btn-normal" >Logout</a></p>
     					{% else %}
-    						<a href="/accounts/signup" class="btn btn-normal" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-normal" >Login</a>
+    						<a href="/app/accounts/signup" class="btn btn-normal" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-normal" >Login</a>
     					{% endif %}
 						
 					</div>
