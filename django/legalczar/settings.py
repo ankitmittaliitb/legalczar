@@ -157,7 +157,7 @@ INSTALLED_APPS = (
     # ... include the providers you want to enable:
     #'allauth.socialaccount.providers.bitly',
     #'allauth.socialaccount.providers.dropbox',
-    'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.linkedin',
@@ -194,8 +194,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = 'mainsite.forms.SignupForm'
 ACCOUNT_LOGOUT_ON_GET = True
 
-LOGIN_URL = '/app/accounts/login/' 
-LOGIN_REDIRECT_URL = "/app/profile/edit" 
+LOGIN_URL = 'accounts/login/' 
+LOGIN_REDIRECT_URL = "profile/edit" 
 ACCOUNT_LOGOUT_REDIRECT_URL = '/app/'
 AUTH_PROFILE_MODULE = 'mainsite.baseprofile'
 

@@ -5,6 +5,8 @@ import os.path
 from django.contrib import admin
 admin.autodiscover()
 
+append = r'^app/' if os.path.isfile('local.pyc') else r'^';
+    	 
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'mainsite.views.home', name='home'),
@@ -16,10 +18,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('allauth.urls')), 
-    url(r'^profile/edit/', 'mainsite.views.profile_edit'),
-
-    if os.path.isfile('../local.pyc'):
-    	url(r'^app/accounts/', include('allauth.urls')), 
-    	url(r'^app/profile/edit/', 'mainsite.views.profile_edit'),
+    url(append+r'accounts/', include('allauth.urls')), 
+    url(append+r'profile/edit/', 'mainsite.views.profile_edit'),
+    
 )
