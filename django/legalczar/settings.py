@@ -1,4 +1,5 @@
 # Django settings for legalczar project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -35,7 +36,7 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID =1
+SITE_ID = 1 if os.path.isfile('local.pyc') else 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -156,10 +157,10 @@ INSTALLED_APPS = (
     # ... include the providers you want to enable:
     #'allauth.socialaccount.providers.bitly',
     #'allauth.socialaccount.providers.dropbox',
-    #'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.github',
-    #'allauth.socialaccount.providers.google',
-    #'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin',
     #'allauth.socialaccount.providers.openid',
     #'allauth.socialaccount.providers.persona',
     #'allauth.socialaccount.providers.soundcloud',
