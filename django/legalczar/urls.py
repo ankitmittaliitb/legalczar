@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+import os.path
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -13,11 +14,12 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
+    
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')), 
     url(r'^profile/edit/', 'mainsite.views.profile_edit'),
 
-
-    url(r'^app/accounts/', include('allauth.urls')), 
-    url(r'^app/profile/edit/', 'mainsite.views.profile_edit'),
+    if os.path.isfile('../local.pyc'):
+    	url(r'^app/accounts/', include('allauth.urls')), 
+    	url(r'^app/profile/edit/', 'mainsite.views.profile_edit'),
 )
