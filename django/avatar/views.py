@@ -5,12 +5,14 @@ from avatar.forms import PrimaryAvatarForm, DeleteAvatarForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.auth.decorators import login_required, csrf_exempt, csrf_protect
+from django.contrib.auth.decorators import login_required
 from django.utils.translation import ugettext as _
+from django.views.decorators.csrf import csrf_exempt
 
 from django.db.models import get_app
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
+from django.contrib import messages
 
 try:
     notification = get_app('notification')
@@ -41,7 +43,7 @@ def _get_next(request):
         next = request.path
     return next
 
-@csrf_exempt
+
 def change(request, extra_context={}, next_override=None):
     avatars = Avatar.objects.filter(user=request.user).order_by('-primary')
     if avatars.count() > 0:
@@ -64,15 +66,16 @@ def change(request, extra_context={}, next_override=None):
             new_file = avatar.avatar.storage.save(path, request.FILES['avatar'])
             avatar.save()
             updated = True
-            request.user.message_set.create(
-                message=_("Successfully uploaded a new avatar."))
+            messages.success(request, message=_("Successfully uploaded a new avatar."))
+            #request.user.message_set.create(
+            #    message=_("Successfully uploaded a new avatar."))
         if 'choice' in request.POST and primary_avatar_form.is_valid():
             avatar = Avatar.objects.get(id=
                 primary_avatar_form.cleaned_data['choice'])
             avatar.primary = True
             avatar.save()
             updated = True
-            request.user.message_set.create(
+            messages.success(request,
                 message=_("Successfully updated your avatar."))
         if updated and notification:
             notification.send([request.user], "avatar_updated", {"user": request.user, "avatar": avatar})
@@ -90,9 +93,8 @@ def change(request, extra_context={}, next_override=None):
               'next': next_override or _get_next(request), }
         )
     )
-change = login_required(change)
+change = login_required(csrf_exempt(change))
 
-@csrf_exempt
 def delete(request, extra_context={}, next_override=None):
     avatars = Avatar.objects.filter(user=request.user).order_by('-primary')
     if avatars.count() > 0:
@@ -127,4 +129,4 @@ def delete(request, extra_context={}, next_override=None):
               'next': next_override or _get_next(request), }
         )
     )
-delete = login_required(delete)
+delete = login_required(csrf_exempt(delete)
