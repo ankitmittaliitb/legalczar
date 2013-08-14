@@ -16,4 +16,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')), 
     url(r'^profile/edit/', 'mainsite.views.profile_edit'),
+
+
+    url(r'^app/accounts/', include('allauth.urls')), 
+    url(r'^app/profile/edit/', 'mainsite.views.profile_edit'),
 )
