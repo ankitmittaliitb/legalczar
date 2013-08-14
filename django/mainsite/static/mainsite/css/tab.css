@@ -444,7 +444,7 @@ input {
 	/*margin:0px;*/
 }
 
-#forms fieldset p {
+#forms p {
 	
 	color: #000;
 	font-family: "Varela Round", Arial, Helvetica, sans-serif;
@@ -454,7 +454,7 @@ input {
 	margin-bottom: 14px;
 }
 
-#forms fieldset p:last-child {
+#forms p:last-child {
 	margin-bottom: 0;
 }
 
