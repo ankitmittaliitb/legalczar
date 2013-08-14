@@ -20,5 +20,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(append+r'accounts/', include('allauth.urls')), 
     url(append+r'profile/edit/', 'mainsite.views.profile_edit'),
+    url(append+r'avatar/', include('avatar.urls')),
     
 )

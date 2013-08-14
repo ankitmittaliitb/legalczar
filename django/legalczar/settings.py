@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'mainsite',
     'localflavor',
     'south',
+    'avatar',
     #for authentication
     'allauth',
     'allauth.account',
@@ -157,10 +158,7 @@ INSTALLED_APPS = (
     # ... include the providers you want to enable:
     #'allauth.socialaccount.providers.bitly',
     #'allauth.socialaccount.providers.dropbox',
-    'allauth.socialaccount.providers.facebook',
-    #'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.linkedin',
+    #'allauth.socialaccount.providers.github',   
     #'allauth.socialaccount.providers.openid',
     #'allauth.socialaccount.providers.persona',
     #'allauth.socialaccount.providers.soundcloud',
@@ -170,6 +168,14 @@ INSTALLED_APPS = (
     #'allauth.socialaccount.providers.vimeo',
     #'allauth.socialaccount.providers.weibo',
 )
+
+if not os.path.isfile('local.pyc'):
+    INSTALLED_APPS = INSTALLED_APPS  + (
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.linkedin',
+)
+
 SOCIALACCOUNT_PROVIDERS = \
     { 'google':
         { 'SCOPE': ['https://www.googleapis.com/auth/userinfo.profile', 'email'],
@@ -186,6 +192,8 @@ SOCIALACCOUNT_PROVIDERS = \
 
     }
 
+SOCIALACCOUNT_AVATAR_SUPPORT = 'avatar' 
+
 #ACCOUNT_EMAIL_VERIFICATION ="mandatory"
 ACCOUNT_EMAIL_REQUIRED = 'True'
 
@@ -193,9 +201,10 @@ ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = 'mainsite.forms.SignupForm'
 ACCOUNT_LOGOUT_ON_GET = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 
-LOGIN_URL = 'accounts/login/' 
-LOGIN_REDIRECT_URL = "profile/edit" 
+LOGIN_URL = '/app/accounts/login/' 
+LOGIN_REDIRECT_URL = "/app/profile/edit" 
 ACCOUNT_LOGOUT_REDIRECT_URL = '/app/'
 AUTH_PROFILE_MODULE = 'mainsite.baseprofile'
 

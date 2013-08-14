@@ -1,3 +1,4 @@
+	{% load avatar_tags %}
 	<header>
 		<div class="header">
 			<div class="wrapper">
@@ -11,7 +12,7 @@
 					</ul>							
 					<div class="h-login">					
 						{% if request.user.is_authenticated %}
-    						<p>{{ request.user }} <a href="/app/accounts/logout" class="btn btn-normal" >Logout</a></p>
+    						<a href="{% url 'avatar_change' %}">Change your avatar</a><p>{% avatar user 30 %}{{ request.user }} <a href="/app/accounts/logout" class="btn btn-normal" >Logout</a></p>
     					{% else %}
     						<a href="/app/accounts/signup" class="btn btn-normal" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-normal" >Login</a>
     					{% endif %}
