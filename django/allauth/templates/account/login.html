@@ -10,6 +10,9 @@
 
 
 
+
+<div id="login">
+<h2><span class="fontawesome-lock"></span>Sign In</h2>
 {% if socialaccount.providers  %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
 of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a> 
@@ -28,8 +31,8 @@ for a {{site_name}} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% endif %}
-<div id="login">
-<h2><span class="fontawesome-lock"></span>Sign In</h2>
+
+
   <!-- <form action="javascript:void(0);" method="POST"> -->
 <form class="login" method="POST" action="{% url 'account_login' %}">
 <fieldset>
