@@ -14,14 +14,22 @@
 {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
     
 <form class="signup" id="signup_form" method="post" action="">
+<fieldset>
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <left><p><input type="submit" value="{% trans "Sign Up" %}" /></p></left>
+</fieldset>
 </form>
-        
+</div>
+
+<script type="text/javascript">
+  profile = document.getElementById('id_profile');
+  barid = document.getElementById('id_barid');  
+  if (profile.checked)  barid.style.display='block'      
+</script>
 
 {% endblock %}
 
