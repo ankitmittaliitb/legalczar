@@ -452,6 +452,7 @@ input {
 	line-height: 1.5em;
 	color: #777;
 	margin-bottom: 14px;
+	padding: 0px 26px;
 }
 
 #forms p:last-child {
