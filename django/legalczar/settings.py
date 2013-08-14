@@ -172,7 +172,7 @@ INSTALLED_APPS = (
 )
 SOCIALACCOUNT_PROVIDERS = \
     { 'google':
-        { 'SCOPE': ['https://www.googleapis.com/auth/userinfo.profile'],
+        { 'SCOPE': ['https://www.googleapis.com/auth/userinfo.profile', 'email'],
           'AUTH_PARAMS': { 'access_type': 'online' } },
 
       'linkedin':
