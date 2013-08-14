@@ -129,4 +129,4 @@ def delete(request, extra_context={}, next_override=None):
               'next': next_override or _get_next(request), }
         )
     )
-delete = login_required(csrf_exempt(delete)
+delete = login_required(csrf_exempt(delete))
