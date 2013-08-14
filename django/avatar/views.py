@@ -5,7 +5,7 @@ from avatar.forms import PrimaryAvatarForm, DeleteAvatarForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, csrf_exempt, csrf_protect
 from django.utils.translation import ugettext as _
 
 from django.db.models import get_app
