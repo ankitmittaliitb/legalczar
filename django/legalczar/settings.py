@@ -186,7 +186,7 @@ SOCIALACCOUNT_PROVIDERS = \
 
       'facebook':
         { 'SCOPE': ['email', 'publish_stream'],
-          'AUTH_PARAMS': { 'auth_type': 'reauthenticate' },
+          #'AUTH_PARAMS': { 'auth_type': 'reauthenticate' },
           'METHOD': 'oauth2' ,
         }
 
@@ -194,7 +194,7 @@ SOCIALACCOUNT_PROVIDERS = \
 
 SOCIALACCOUNT_AVATAR_SUPPORT = 'avatar' 
 
-#ACCOUNT_EMAIL_VERIFICATION ="mandatory"
+ACCOUNT_EMAIL_VERIFICATION ="mandatory"
 ACCOUNT_EMAIL_REQUIRED = 'True'
 
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
@@ -202,6 +202,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = 'mainsite.forms.SignupForm'
 ACCOUNT_LOGOUT_ON_GET = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
+SOCIALACCOUNT_AUTO_SIGNUP = False
 
 LOGIN_URL = '/app/accounts/login/' 
 LOGIN_REDIRECT_URL = "/app/profile/edit" 
