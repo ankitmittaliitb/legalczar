@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>learned | please login</title>
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/mainsite/css/responsive-gs-12col.css">
+   
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+    	.key_login {
+    		margin-top: 290px;
+    		font-size: 28px;
+    		color: #aaa;
+    		border: 0px;
+    		outline: none;
+    	}
+    	* {
+    		font-family: Cabin;
+    	}
+    	.key_login:hover{
+    		cursor: pointer;
+    	}
+    	
+    </style>
+</head>
+<body>
+	<div id="page_wrap" class="container" style="width: 90px;">
+		<form name="input" action="" method="post">
+        {% csrf_token %}
+			<input type="text" class="col span_12 key_login" name="lock_key" placeholder="{{ request.session.lock_key }}" autocomplete="off" style="opacity: 0.1"> 
+		</form>
+	</div>
+
+<script type="text/javascript">
+
+$(window).load(function(){
+
+	$(".key_login").animate({
+	    opacity: 1,
+	    marginTop: '250px',
+	  }, 500, function() {
+	  	
+	  });
+	
+});
+
+</script>
+</body>
+</html>

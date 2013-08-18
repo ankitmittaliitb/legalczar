@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView
+import random
 
 def home(request ):
     #data = request.GET
@@ -17,6 +18,16 @@ def home(request ):
     except Page.DoesNotExist:    
         raise Http404"""
     #'style':data['style']
+
+    if not request.session.has_key('lock_key'):
+        request.session['lock_key'] = random.randint(101, 899)
+
+    if request.session['lock_key'] + 100 == int(request.POST.get('lock_key', 0)):
+        request.session['logged'] = 1
+
+    if not request.session.has_key('logged'):
+        return render(request, 'mainsite/login.html', {'domain':request.META['HTTP_HOST']})
+
     return render(request, 'mainsite/home.html', {'domain':request.META['HTTP_HOST']})
 
 class MessageMixin():
