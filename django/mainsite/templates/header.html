@@ -1,6 +1,6 @@
 	{% load avatar_tags %}
 
-	<header>
+	<!-- <header>
 		<div class="header">
 			<div class="wrapper">
 				<a href="/" class="h-logo"></a>
@@ -13,7 +13,7 @@
 					</ul>							
 					<div class="h-login">					
 						{% if request.user.is_authenticated %}
-    						<!-- <a href="{% url 'avatar_change' %}">Change your avatar</a> -->
+    						<a href="{% url 'avatar_change' %}">Change your avatar</a>
     						<p>{% avatar user 30 %}{{ request.user }} <a href="/app/accounts/logout" class="btn btn-normal" >Logout</a></p>
     					{% else %}
     						<a href="/app/accounts/signup" class="btn btn-normal" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-normal" >Login</a>
@@ -24,4 +24,88 @@
 				</nav>
 			</div>
 		</div>
-	</header>
+	</header> -->
+
+
+
+
+
+
+	<div class="navbar navbar">
+		<div class="navbar-inner navbar-fixed-top">
+
+			
+			<div class="container">
+
+
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-02">
+				</button>
+				<a style="padding:9px 40px 7px 10px" href="#fakelink" class="brand" ><img src="/static/mainsite/img/logos.png" /></a>
+				<div class="nav-collapse collapse" id="nav-collapse-02">
+
+					{% if request.user.is_authenticated %}
+					<ul class="nav pull-right">
+						<li>
+							<a style="padding:16px 18px 11px 0px;" href="#fakelink">{% avatar user 30 %} &nbsp; {{ request.user }} 
+								<!-- <a href="/app/accounts/logout" class="btn btn-primary" >Logout</a> -->
+							</a>
+						</li>
+
+								<!-- <li class="active">
+									<a style="padding:19px 20px 17px 0px" href="#fakelink">
+										<span class="fui-user"></span>										
+									</a>
+								</li> -->
+								<li>
+									<a style="padding:19px 20px 17px 0px" href="#fakelink">
+										<span class="fui-mail"></span>
+										<!-- <span class="hidden-desktop">Messages</span> -->
+										<span class="navbar-new">1</span>
+									</a>
+								</li>
+								<li class="divider"></li>
+								<li class="dropdown">
+									<a style="padding:19px 20px 17px 0px" href="#fakelink" data-toggle="dropdown">
+										<span class="fui-gear"><b class="caret"></b></span>
+										<!-- <span class="hidden-desktop">Settings</span> -->
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#fakelink">Action</a></li>
+										<li><a href="#fakelink">Another action</a></li>
+										<li><a href="#fakelink">Something else here</a></li>
+										<li class="divider"></li>
+										<li><a href="#fakelink">Separated link</a></li>
+									</ul>
+								</li>
+
+
+							</ul> 
+
+							{% else %}
+							<ul class="nav">
+								<li class="active"><a style="padding:19px 20px 17px" href="#fakelink">Find Attorneys</a></li>
+								<li><a style="padding:19px 20px 17px" href="#fakelink">How It Works</a></li>
+								<li><a style="padding:19px 20px 17px" href="#fakelink">Contact Us</a></li>
+								<!-- <li><a style="padding:19px 20px 17px" href="#fakelink">About</a></li> -->
+							</ul> <!-- /nav -->
+							<div class="pull-right">						
+								<a href="/app/accounts/signup" class="btn btn-primary" >Register</a> &nbsp; &nbsp; <a href="/app/accounts/login" class="btn btn-primary" >Login</a>					
+							</div>
+							{% endif %}
+                  <!-- <form class="navbar-search form-search pull-right" action="">
+                    <div class="input-append">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                      <button type="submit" class="btn btn-large">
+                        <i class="fui-search"></i>
+                      </button> 
+                    </div>
+                </form>-->
+            </div><!--/.nav-collapse -->
+            
+        </div>
+
+    </div>
+
+
+</div>
+<div class="container" style="margin:57px 0px 0px 0px"></div>

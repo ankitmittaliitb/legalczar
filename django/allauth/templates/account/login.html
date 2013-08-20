@@ -9,47 +9,87 @@
 {% block content %}
 
 
-
-
-<div id="login">
-<h2><span class="fontawesome-lock"></span>Login</h2>
+  <div id="login">
+    <h2><span class="fontawesome-lock"></span>Login</h2>
 
 
 
-  <!-- <form action="javascript:void(0);" method="POST"> -->
-<form class="login" method="POST" action="{% url 'account_login' %}">
-<fieldset>
-{% if socialaccount.providers  %}
+    <!-- <form action="javascript:void(0);" method="POST"> -->
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      <fieldset>
+        {% if socialaccount.providers  %}
 <!-- <p>{% blocktrans with site.name as site_name %}Sign in with of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a> 
 for a {{site_name}} account and sign in below:{% endblocktrans %}</p>
- -->
- <div style="height=100%" ></div>
+-->
+<!-- <div style="height=100%" ></div>
 <div class="socialaccount_ballot">
 
   <ul class="socialaccount_providers">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+
+  </ul>
+
   </ul>
 
   <div class="login-or">{% trans 'or' %}</div>
 
+</div> -->
+<div style="height=100%" ></div>
+<div class="socialaccount_ballot">
+<!-- <p style="display:inline" > Connect With : </p><br> -->
+   <a href="/app/accounts/google/login/?process=login" class="btn btn-small btn-social-googleplus" style="display:inline; margin:10px 10px" >
+            <i class="fui-googleplus"></i>
+            Google
+          </a>
+         <!-- <p style="display:inline" > or </p> -->
+          <a href="/app/accounts/linkedin/login/?process=login" class="btn btn-small btn-social-linkedin" style="display:inline; margin:10px 10px" >
+            <i class="fui-linkedin"></i>
+            Linkedin
+          <!-- </a> <p style="display:inline"> or </p> -->
+           <a href="/app/accounts/facebook/login/?process=login" class="btn btn-small btn-social-facebook" style="display:inline; margin:10px 10px" >
+            <i class="fui-facebook"></i>
+            Facebook
+          </a>
+          <br><br>
+          <center><div class="login-or">{% trans 'or' %}</div></center>
+             <br>
 </div>
-
 {% include "socialaccount/snippets/login_extra.html" %}
-
+{% else %}
+<div style="height=100%" ></div>
+<div class="socialaccount_ballot">
+<!-- <p style="display:inline" > Connect With : </p><br> -->
+   <a href="/app/accounts/google/login/?process=login" class="btn btn-small btn-social-googleplus" style="display:inline; margin:10px 10px" >
+            <i class="fui-googleplus"></i>
+            Google
+          </a>
+         <!-- <p style="display:inline" > or </p> -->
+          <a href="/app/accounts/linkedin/login/?process=login" class="btn btn-small btn-social-linkedin" style="display:inline; margin:10px 10px" >
+            <i class="fui-linkedin"></i>
+            Linkedin
+          <!-- </a> <p style="display:inline"> or </p> -->
+           <a href="/app/accounts/facebook/login/?process=login" class="btn btn-small btn-social-facebook" style="display:inline; margin:10px 10px" >
+            <i class="fui-facebook"></i>
+            Facebook
+          </a>
+          <br><br>
+          <center><div class="login-or">{% trans 'or' %}</div></center>
+             <br>
+</div>
 {% endif %}
 
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
-  <p><input type="submit" value="Sign In"></p>
-  <!-- <button class="primaryAction" type="submit">{% trans "Sign In" %}</button> -->
-        </fieldset>
-        <center><p>{% blocktrans with site.name as site_name %}Or, <a href="{{ signup_url }}">sign up</a> for a {{site_name}} account.{% endblocktrans %}</p></center>
+{% csrf_token %}
+{{ form.as_p }}
+{% if redirect_field_value %}
+<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+{% endif %}
+<!-- <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> -->
+<p><input type="submit" value="Sign In" class="btn btn-primary btn-block btn-small"></p>
+<!-- <button class="primaryAction" type="submit">{% trans "Sign In" %}</button> -->
+</fieldset>
+<center><p>{% blocktrans with site.name as site_name %}Or, <a href="{{ signup_url }}">sign up</a> for a {{site_name}} account.{% endblocktrans %}</p></center>
 </form>
-  </div>
+</div>
 
 {% endblock %}
 

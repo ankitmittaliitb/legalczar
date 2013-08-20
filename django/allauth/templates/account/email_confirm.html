@@ -8,9 +8,9 @@
 
 
 {% block content %}
-<div id="forms">
+<div class="container alert alert-success">
 <h1>{% trans "Confirm E-mail Address" %}</h1>
-<fieldset border=0>
+<fieldset>
 {% if confirmation %}
 
 {% user_display confirmation.email_address.user as user_display %}

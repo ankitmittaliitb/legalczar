@@ -1,6 +1,6 @@
 # Create your views here.
 from django.http import HttpResponse
-from mainsite.models import LawyerProfile
+from mainsite.models import *
 from mainsite.forms import ProfileEditForm
 from django.template import RequestContext, loader
 from django.shortcuts import get_object_or_404, render
@@ -46,8 +46,14 @@ class ProfileEdit(MessageMixin,UpdateView):
     template_name = "mainsite/profile_edit.html"
     success_url = "app/profile/"
     redirect_field_name = None
-
+profile_edit = ProfileEdit.as_view()
     
+def profile_view(request,username):
+    
+    user = User.objects.get(username=username);
+    profile = user.get_profile()
+
+    return render(request, 'mainsite/profile.html', {'domain':request.META['HTTP_HOST'], 'profile':profile})
 
     """ def form_valid(self, form):
         success_url = self.get_success_url()
@@ -72,7 +78,7 @@ class ProfileEdit(MessageMixin,UpdateView):
                 })
         return ret"""
 
-profile_edit = ProfileEdit.as_view()
+
 
 """
 @login_required

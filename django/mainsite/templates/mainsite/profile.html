@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block head_title %}Edit Profile | LegalCzar {% endblock %}
+
+{% block content %}
+
+	{% load avatar_tags %}
+<div class="container">
+<div class="row-fluid">
+<!-- <div class="span1"></div> -->
+	<div class="span3">
+			<!-- <div class="dialog"> -->
+				<!-- {% avatar profile.user 200 "img-rounded" %} -->
+				<!-- <p class="img-comment"><strong>{{ profile.user.first_name }} {{ profile.user.last_name }}</strong> </p> -->
+			<!-- </div> -->
+
+		<!-- <a href="{% url 'avatar_change' %}">Change your avatar</a> -->
+
+		<ul class="nav nav-list nav-list-vivid">
+		<li class="nav-header"> {% avatar profile.user 200 "img-rounded" %}</li>
+		<li class="divider"></li>
+			<li class="nav-header">{{ profile.user.first_name }}'s Details <i class="icon-map-marker"></i></li>
+
+			<li><span class="fui-location pvs prm"></span>{{ profile.city }}, {{ profile.state }}</li>
+			<li><span class="fui-check-inverted pvs prm"></span>Verified </li>
+				<!-- <a href="#fakelink"> -->
+					
+					<!-- <span class="nav-counter">19</span> -->
+				<!-- </a> -->
+			<!-- </li> -->
+			<li class="active">
+				<a href="#fakelink">
+					Photography
+					<span class="nav-counter">130</span>
+				</a>
+			</li>
+			<li>
+				<a href="#fakelink">
+					Art
+					<span class="nav-counter">9</span>
+				</a>
+			</li>
+			<li class="divider"></li>
+			<li class="nav-header">Condition</li>
+			<li>
+				<a href="#fakelink">
+					Brand new
+					<span class="nav-counter">69</span>
+				</a>
+			</li>
+			<li>
+				<a href="#fakelink">
+					Read-used
+					<span class="nav-counter">21</span>
+				</a>
+			</li>
+			<li>
+				<a href="#fakelink">
+					Work-used
+					<span class="nav-counter">40</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="span8">
+		
+
+
+
+			<h1>	
+				{{ profile.user.first_name }} {{ profile.user.last_name }}
+				<small>Free Web User Interface Kit</small>
+			</h1>
+		
+
+
+		
+	</div>
+</div>
+
+</div>
+
+
+{% endblock %}

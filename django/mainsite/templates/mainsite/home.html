@@ -1,367 +1,409 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+	<div class="jumbotron" >
+		<br><br>
+		<h1>Work with lawyers online.</h1>
+		<p class="lead">Find and work with the right lawyer for you, without leaving home.</p>
 
-	<section>
-		<div class="hp-hero" data-type="background" data-speed="10">
-			<div class="wrapper">
-				<div class="hp-cta-box">
-					<h1 class="hp-headline">Work with lawyers online.</h1>
-					<p class="hp-subline">Find and work with the right lawyer for you, without leaving home.</p>
-					<!--ref="/Public/NewJob" class="btn big-btn hp-cta-btn">Post a Legal Job. It's Free!</a>#d35400-->
-				</div>
+		<ul class="nav nav-tabs nav-append-content">
+			<li class="active"><a href="#tab1">Browse Lawyers</a></li>
+			<li><a href="#tab2">Get A Call</a></li>
+			<li><a href="#tab3">Submit a Question</a></li>
 
-
-				<div id ="sTab" class="hp-search">
-
-
-			
-  <ul id="menu"> 
-    <li class="tab1" ><a href="#tab1">Browse Lawyers</a></li> 
-    <li class="tab2" ><a href="#tab2">Get A Call</a></li> 
-    <li class="tab3" ><a href="#tab3">Submit a Question</a></li> 
-  </ul> 
-  <div id="tab1" class="contentHolder ui-tabs-active">
-  
-							<div id="test" class="f-select f-topic">
-						<div class="f-bubble">
-							<ul>
-								<li><a href="/lawyers/trademark">Trademark Lawyers</a></li>
-								<li><a href="/lawyers/real-estate">Real Estate Lawyers</a></li>
-								<li><a href="/lawyers/patent">Patent Lawyers</a></li>
-								<li><a href="/lawyers/landlord">Landlord Lawyers</a></li>
-								<li><a href="/lawyers/intellectual-property">Intellectual Property Lawyer</a></li>
-								<li><a href="/lawyers/immigration">Immigration Lawyers</a></li>
-								<li><a href="/lawyers/employment">Employment Lawyers</a></li>
-								<li><a href="/lawyers/copyright">Copyright Lawyers</a></li>
-								<li><a href="/lawyers/commercial-real-estate">Commercial Real Estate Lawyers</a></li>
-								<li><a href="/lawyers/business">Business Lawyers</a></li>
+		</ul>
+		<div class="tab-content" style="overflow:visible; width:60%">
+			<div class="tab-pane active" id="tab1">
+				<div class="row-fluid">
+					<div class="span4">
+						<div class="btn-group select select-block mbl">
+							<i class="dropdown-arrow dropdown-arrow-inverse"></i>
+							<button class="btn dropdown-toggle clearfix btn-small btn-primary" data-toggle="dropdown">
+								<span class="filter-option pull-left">Location</span>&nbsp;<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu dropdown-inverse" role="menu" style="overflow-y: auto; min-height: 108px; max-height: 478px;">
+								<li rel="0" class=""><a tabindex="-1" href="#" class="opt "><span class="pull-left">Delhi</span></a></li>
+								<li rel="1" class=""><a tabindex="-1" href="#" class="opt  active"><span class="pull-left">My Friends</span></a></li>
+								<li rel="2" class="selected"><a tabindex="-1" href="#" class="opt  active">	<span class="pull-left">Messages</span></a></li>
+								<li rel="3"><a tabindex="-1" href="#" class="opt "><span class="pull-left">My Settings</span></a></li>
+								<li rel="4"><a tabindex="-1" href="#" class="opt highlighted fui-lock"><span class="pull-left">Logout</span></a></li>
 							</ul>
 						</div>
-						<span class="f-label">By Practice Area</span><span class="f-arrow"></span>
-					</div> or 
-					<div class="f-select f-location">
-						<div class="f-bubble">
-							<ul>
-								<li><a href="/lawyers/Delhi">Delhi Lawyers</a></li>
-								<li><a href="/lawyers/san-diego">Haryana Lawyers</a></li>
-								<li><a href="/lawyers/los-angeles">UP Lawyers</a></li>
-							</ul>
-						</div>
-						<span class="f-label">By location</span><span class="f-arrow"></span>
+
 					</div>
-								
+					<div class="span1"><p><center>and</center></p></div>   
+					<div class="span4">
+						<div class="btn-group select select-block mbl select-multiple">
+							<i class="dropdown-arrow dropdown-arrow-inverse"></i>
+							<button class="btn dropdown-toggle clearfix btn-small btn-primary" data-toggle="dropdown">
+								<span class="filter-option pull-left">Practice Area</span>&nbsp;<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu dropdown-inverse" role="menu" style="overflow-y: auto; min-height: 108px; max-height: 406px;">
+								<li rel="0"><a tabindex="-1" href="#" class=""><span class="pull-left">Trademark Lawyers</span></a></li>
+								<li rel="1" class="selected"><a tabindex="-1" href="#" class=""><span class="pull-left">Real Estate Lawyers</span></a></li>
+								<li rel="2" class="selected"><a tabindex="-1" href="#" class=""><span class="pull-left">Patent Lawyers</span></a></li>
+								<li rel="3" class="selected"><a tabindex="-1" href="#" class=""><span class="pull-left">Intellectual Property Lawyer</span></a></li>
+								<li rel="4"><a tabindex="-1" href="#" class=""><span class="pull-left">Immigration Lawyers</span></a></li>
+							</ul>
+						</div>
 
-  </div> 
-  <div id="tab2" class="contentHolder">Coming Soon!</div> 
-  <div id="tab3" class="contentHolder">Coming Soon!</div>
-					
 					</div> 
+					<div class="span1"></div>
+					<div class="span2">
+						<a href="#fakelink" class="btn btn-small btn-block btn-inverse">Search</a>
+					</div>   
 				</div>
+			</div>
+
+			<!-- /tabs -->
+			<div class="tab-pane" id="tab2">
+				<p>Coming Soon!</p>
+			</div>
+
+			<!-- /tabs -->
+			<div class="tab-pane" id="tab3">
+				<p>Coming Soon!</p>
 			</div>
 		</div>
-	</section>
-
-<div class="hp-attorney-msg">	
-	<div class="l1">Are you a attorney? <a href="/Account/LogOn" class="btn btn-normal" > Signup now!</a> &nbsp; &nbsp; </div>	
-
+		<br><br>
+	</div>
 </div>
 
-<section>
-	<div class="section divider">
-		<div class="wrapper">
-
-			<div class="hp-law-firms">
-				<h3>Experienced Marketplace Attorneys</h3>
-
-
-				<div class="hp-stats clearfix">
-					<div class="hp-stat">
-						<div class="highlight">
-							<strong>11 years</strong>
-						</div>
-						Average experience
-					</div>
-					<div class="hp-stat">
-						<div class="highlight">
-							<strong>4.9 stars out of 5</strong>
-						</div>
-						Average legalczar rating
-					</div>
-					<div class="hp-stat">
-						<div class="highlight">
-							<strong>1000+</strong>
-						</div>
-						Businesses served
-					</div>
-				</div>
-			</div>
-			<!-- 	 <div class="hp-law-firms">			</div> -->
-			<br><h4>Top legalczar attorneys have worked at</h4> 
+		<!-- 	<div class="dialog demo-dialog">
+				<form class="control-group">
+					<input type="text" placeholder="Login/E-mail" class="flat">
+					<input type="password" placeholder="Password" class="flat">
+					<button class="btn btn-primary btn-wide">Login</button>
+					<button class="btn btn-danger btn-wide">Register</button>
+				</form>
+			</div> -->
+			
+		
+			
+			<!-- <hr></div> -->
 
 
-			<div class="press">
-				<ul class='press_items_row jcarousel-skin-press' id='press_items_carousel'>
-
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith.png"  /></a></div>
-						<!-- <div class='press_item_text'><span class='quotes_init'></span>Tata.<span class='quotes_end'></span></div> -->
-					</li>
-
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith2.jpg"  /></a></div>
-					</li>
+			<!-- <hr> -->
 
 
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith3.jpg"  /></a></div>
-					</li>
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith.png"  /></a></div>
-					</li>
-
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith2.jpg"  /></a></div>
-					</li>
-
-
-					<li class='press_item'>
-						<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith3.jpg"  /></a></div>
-					</li>
-				</ul>
-
-
-			</div></div>
-		</div>	
-	</section>
-
-
-	<section>
-		<div class="section alt">
-			<div class="wrapper">
+			<!-- <div class="dialog"  > -->
+			<div class="container">
+			<hr>
 
 				<!-- <div class="hp-attorney-msg"> -->
-				<h3>Featured Lawyers</h3>
+				<!-- //style="background-color:#f39c12; color:white" -->
+				<center><h3>Featured Lawyers</h3></center>
 				<ul class='jcarousel-skin-mini-profiles' id='mini-profiles_carousel'>
 					<li>
-						
-						<div class="hp-profile">
-							<div class="hp-profile-card">
-								<div class="hp-profile-left">
-									<img src="/static/mainsite/img/v8/tali.jpg" alt="Tali Buchman" />
-									Tali Buchman
+						<div class="alert alert-success">
+							<!-- <button type="button" class="close fui-cross" data-dismiss="alert"></button> -->
+							<div class="row-fluid">
+								<div class="span3"><img src="/static/mainsite/img/v8/tali.jpg" alt="Tali Buchman" /><h3>Tali <br>Buchman</h3>
 								</div>
-								<div class="hp-profile-right">
-									<div class="hp-rating">
-										<span class="rating-big-static rating-big-5_0"></span>5 star rating out of 12 jobs
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-experience"></span>16 years experience
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-company"></span>Principal at Boutique Firm
-									</div>
-								</div>
-							</div>
-						</div> </li>
-						<li><div class="hp-profile">
-							<div class="hp-profile-card no-margin">
-								<div class="hp-profile-left">
-									<img src="/static/mainsite/img/v8/carl.jpg" alt="Carl Loeffler" />
-									Carl Loeffler
-								</div>
-								<div class="hp-profile-right">
-									<div class="hp-rating">
-										<span class="rating-big-static rating-big-5_0"></span>5 star rating out of 6 jobs
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-experience"></span>15 years experience
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-company"></span>Former Big-Law Associate
-									</div>
-								</div>
-							</div>
-						</div></li>
-						<li><div class="hp-profile">
-							<div class="hp-profile-card">
-								<div class="hp-profile-left">
-									<img src="/static/mainsite/img/v8/archie.jpg" alt="Archie Wright" />
-									Archie Wright
-								</div>
-								<div class="hp-profile-right">
-									<div class="hp-rating">
-										<span class="rating-big-static rating-big-5_0"></span>5 star rating out of 7 jobs
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-experience"></span>39 years experience
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-company"></span>Former Law Firm Partner
-									</div>
-								</div>
-							</div>
-						</div></li>
-						<li><div class="hp-profile">
-							<div class="hp-profile-card no-margin">
-								<div class="hp-profile-left">
-									<img src="/static/mainsite/img/v8/jacob.jpg" alt="Jacob Kiani" />
-									Jacob Kiani
-								</div>
-								<div class="hp-profile-right">
-									<div class="hp-rating">
-										<span class="rating-big-static rating-big-5_0"></span>5 star rating out of 5 jobs
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-experience"></span>6 years experience
-									</div>
-									<div class="hp-profile-stat">
-										<span class="icon-20px icon-20px-company"></span>Former Big-Law Associate
-									</div>
-								</div>
-							</div>
-						</div></li></ul>
-					</div>
-					
-				</div>
-			</section>
+								<div class="span9">
+									<span class="fui-star-2"></span></span> &nbsp; 5 star rating out of 12 jobs		<br>	<br>								
 
-			<section>
-				<div class="section">
-					<div class="wrapper">
-						<h3>Why Use legalczar?</h3>
-						<div class="clearfix">
-							<div class="hp-val">
-								<span class="hp-val-icon">
-									<span class="hp-star"></span>
-								</span>
-								<h4>Powered by Quality</h4>
-								<p>Marketplace attorneys must pass our screening and have detailed profiles so you can choose based on desired price, experience and client reviews.</p>
-							</div>
-							<div class="hp-val">
-								<span class="hp-val-icon">
-									<span class="hp-piggy"></span>
-								</span>
-								<h4>Cost Effective</h4>
-								<p>Get great rates from a diverse, experienced and tech-savvy legal workforce competing for your business. (No law firm overhead!).</p>
-							</div>
-							<div class="hp-val">
-								<span class="hp-val-icon">
-									<span class="hp-plane"></span>
-								</span>
-								<h4>Hassle Free</h4>
-								<p>We make it fast and easy to find, hire and manage legal help, and back it up with our Guarantee.</p>
-							</div>
-							<div class="hp-val">
-								<span class="hp-val-icon">
-									<span class="hp-lock"></span>
-								</span>
-								<h4>Secure and Confidential</h4>
-								<p>We safeguard your privacy. Jobs posted are only visible to professionals in our marketplace. Payments are simple and secure.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div class="section alt">
-					<div class="wrapper">
-						<h3>How It Works</h3>
-						<div class="hp-hiw clearfix">
-							<div class="hp-step">
-								<div class="hp-step-icon hp-post-job"></div>
-								<h4>1. Post a job for free</h4>
-							</div>
-							<div class="hp-step">
-								<div class="hp-step-icon hp-get-quotes"></div>
-								<h4>2. Get quotes and hire</h4>
-							</div>
-							<div class="hp-step last">
-								<div class="hp-step-icon hp-manage-pay"></div>
-								<h4>3. Manage and pay</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+									<span class="fui-book"></span></span> &nbsp; 16 years experience<br> <br>
+									<span class="fui-tag"></span></span> &nbsp; Principal at Boutique Firm
 
-			<section>
-				<div class="section divider">
-					<div class="wrapper">
-						<h3>Testimonials</h3>
-						<div class="clearfix">
-							<div class="hp-task business-formation" id="t1">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $4,000</span>
-										Business Formation
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>Our experience with legalczar and [our lawyer] has been great. He was able to address our concerns, assist us with our formation, and been enthusiastic about our project.</p>
-									<span class="hp-task-client">
-										- Sarah & Rob<br />Retail Franchisees
-									</span>
-								</a>
-							</div>
-							<div class="hp-task business-formation" id="t2">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $5,000</span>
-										Real Estate Transactions
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>[My lawyer] was extremely knowledgeable about real estate law and super easy to talk to. She took the time, asked questions and really understood my needs. I will definitely be back!</p>
-									<span class="hp-task-client">- Mina M.<br />VP at Global Asset Management Co.</span>
-								</a>
-							</div>
-							<div class="hp-task business-formation no-margin" id="t3">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $6,000</span>
-										Technology Agreements
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>[Our attorney] did a great job helping out with my contract - quick and painless experience! She understands the SaaS space well and pointed out the necessary items that I will need to include.</p>
-									<span class="hp-task-client">- Dharshan R.<br />Executive at High Tech Startup</span>
-								</a>
-							</div>
-							<div class="hp-task business-formation" id="t4">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $15,000</span>
-										Ongoing Corp. Counsel
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>We are so happy to have found [our lawyer] on legalczar. Maintaining our Minute Book and keeping track of corporate legal work is no longer a nightmare.</p>
-									<span class="hp-task-client">- Tristian M.<br />COO at Technology Consulting Firm </span>
-								</a>
-							</div>
-							<div class="hp-task business-formation" id="t5">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $2,000</span>
-										Business Visa
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>legalczar is a powerful resource. In just 3 days we were able to enlist top immigration attorneys with competitive rates to help over 60 international entrepreneurs attend an event in the US.</p>
-									<span class="hp-task-client">- Sam O.<br />Executive at International Accelerator</span>
-								</a>
-							</div>
-							<div class="hp-task business-formation no-margin" id="t6">
-								<a class="hp-task-slide">
-									<span class="hp-task-title">
-										<span class="hp-saved">Saved $1,000</span>
-										Part-Time Legal Staff
-									</span>
-									<span class="rating-big-static rating-big-5_0"></span>
-									<p>The lawyers on legalczar are great to scale my practice for larger projects and legal research or writing. I can always find the right people and their customer support is amazing.</p>
-									<span class="hp-task-client">- Eli B.<br />Small Law Firm Practitioner</span>
-								</a>
+								</div>
 							</div>
 						</div>
+					</li>
+					<li>
+						<div class="alert alert-success">
+							<!-- <button type="button" class="close fui-cross" data-dismiss="alert"></button> -->
+							<div class="row-fluid">
+								<div class="span3"><img src="/static/mainsite/img/v8/tali.jpg" alt="Tali Buchman" /><h3>Tali <br>Buchman</h3>
+								</div>
+								<div class="span9">
+									<span class="fui-star-2"></span></span> &nbsp; 5 star rating out of 12 jobs		<br>	<br>								
+
+									<span class="fui-book"></span></span> &nbsp; 16 years experience<br> <br>
+									<span class="fui-tag"></span></span> &nbsp; Principal at Boutique Firm
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="alert alert-success">
+							<!-- <button type="button" class="close fui-cross" data-dismiss="alert"></button> -->
+							<div class="row-fluid">
+								<div class="span3"><img src="/static/mainsite/img/v8/tali.jpg" alt="Tali Buchman" /><h3>Tali <br>Buchman</h3>
+								</div>
+								<div class="span9">
+									<span class="fui-star-2"></span></span> &nbsp; 5 star rating out of 12 jobs		<br>	<br>								
+
+									<span class="fui-book"></span></span> &nbsp; 16 years experience<br> <br>
+									<span class="fui-tag"></span></span> &nbsp; Principal at Boutique Firm
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="alert alert-success">
+							<!-- <button type="button" class="close fui-cross" data-dismiss="alert"></button> -->
+							<div class="row-fluid">
+								<div class="span3"><img src="/static/mainsite/img/v8/tali.jpg" alt="Tali Buchman" /><h3>Tali <br>Buchman</h3>
+								</div>
+								<div class="span9">
+									<span class="fui-star-2"></span></span> &nbsp; 5 star rating out of 12 jobs		<br>	<br>								
+
+									<span class="fui-book"></span></span> &nbsp; 16 years experience<br> <br>
+									<span class="fui-tag"></span></span> &nbsp; Principal at Boutique Firm
+
+								</div>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+				<hr>
+</div>
+			<!-- </div> -->
+			<!-- <div class ="dialog" > -->
+
+
+			<div class="container">
+
+				<center><h3>Why Use legalczar?</h3></center>
+
+				<div class="row-fluid demo-illustrations">
+					<div class="span3" height=100%>
+						<div class="alert alert-info" height=100%>
+							<center><img src="/static/mainsite/images/icons/Compas@2x.png" alt="Compas@2x" class="tile-image big-illustration">
+								<h3 class="tile-title">Powered by Quality</h3>
+								<p>You can choose based on desired price, experience and client reviews.</p></center>
+								<!-- <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a> -->
+							</div>
+						</div>
+
+						<div class="span3">
+							<div class="alert alert-info" height=100%>
+								<center><img src="/static/mainsite/images/icons/Infinity-Loop@2x.png" alt="Infinity-Loop@2x" class="tile-image">
+									<h3 class="tile-title">Cost Effective</h3>
+									<p>Get great rates from a diverse and experienced legal workforce. </p></center>
+									<!-- <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a> -->
+								</div>
+							</div>
+
+							<div class="span3">
+								<div class="alert alert-info" height=100%>
+									<center><img src="/static/mainsite/images/icons/Pensils@2x.png" alt="Pensils@2x" class="tile-image">
+										<h3 class="tile-title">Hassle <br>Free</h3>
+										<p>We make it fast and easy to find, hire and manage legal help. </p></center>
+										<!-- <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a> -->
+									</div>
+								</div>
+
+								<div class="span3">
+									<div class="alert alert-info" height=100%>
+										<center><img src="/static/mainsite/images/icons/Chat@2x.png" alt="Chat@2x" class="tile-image">
+											<h3 class="tile-title">Secure and Confidential</h3>
+											<p>Jobs posted are only visible to professionals in our marketplace.</p></center>
+											<!-- <a class="btn btn-primary btn-large btn-block" href="http://designmodo.com/flat">Get Pro</a> -->
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+							<!-- <div class="row-fluid">
+								<div class="span6">
+									<span class="hp-val-icon">
+										<span class="hp-star"></span>
+									</span>
+									<h4></h4>
+									<p>Marketplace attorneys must pass our screening and have detailed profiles so you can choose based on desired price, experience and client reviews.</p>
+								</div>
+								<div class="span6">
+									<span class="hp-val-icon">
+										<span class="hp-piggy"></span>
+									</span>
+									<h4></h4>
+									<p>Get great rates from a diverse, experienced and tech-savvy legal workforce competing for your business. (No law firm overhead!).</p>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span6">
+									<span class="hp-val-icon">
+										<span class="hp-plane"></span>
+									</span>
+									<h4></h4>
+									<p>We make it fast and easy to find, hire and manage legal help, and back it up with our Guarantee.</p>
+								</div>
+								<div class="span6">
+									<span class="hp-val-icon">
+										<span class="hp-lock"></span>
+									</span>
+									<h4></h4>
+									<p>We safeguard your privacy. Jobs posted are only visible to professionals in our marketplace. Payments are simple and secure.</p>
+								</div>
+							</div>
+						</div> -->
+
+<!-- <div class="dialog" style="background-color:#f39c12; color:white" > -->
+<div class="container">
+				<div class="alert alert-success">
+					<center><h3>Experienced Marketplace Attorneys</h3></center><br>
+					<div class="row-fluid">
+						<div class="span4"><center><strong>11 years</strong><br>Average experience</center></div>
+						<div class="span4"><center><strong>4.9 stars out of 5</strong><br>Average legalczar rating</center></div>
+						<div class="span4"><center><strong>1000+</strong><br>Businesses served</center></div>
 					</div>
 				</div>
-			</section>
-			
-{% endblock %}
+
+				
+				
+
+				<div class="press alert alert-success">
+				<center><h3>Top Legalczar Attorneys Have Worked At</h3> </center>
+
+					<ul class='press_items_row jcarousel-skin-press' id='press_items_carousel'>
+
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith.png"  /></a></div>
+							
+						</li>
+
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith2.jpg"  /></a></div>
+						</li>
+
+
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith3.jpg"  /></a></div>
+						</li>
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith.png"  /></a></div>
+						</li>
+
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith2.jpg"  /></a></div>
+						</li>
+
+
+						<li class='press_item'>
+							<div class='press_image'><a href="#" target="_blank"><img alt="Wall street journal logo" src="/static/mainsite/img/workedwith3.jpg"  /></a></div>
+						</li>
+					</ul>
+
+
+				</div>
+			</div> 
+			<!-- </div> -->
+			<br>
+
+						<!-- <div class="dialog" style="background-color:#34495E; color:white" >
+
+							<h3>How It Works</h3>
+							<div class="hp-hiw clearfix">
+								<div class="hp-step">
+									<div class="hp-step-icon hp-post-job"></div>
+									<h4>1. Post a job for free</h4>
+								</div>
+								<div class="hp-step">
+									<div class="hp-step-icon hp-get-quotes"></div>
+									<h4>2. Get quotes and hire</h4>
+								</div>
+								<div class="hp-step last">
+									<div class="hp-step-icon hp-manage-pay"></div>
+									<h4>3. Manage and pay</h4>
+								</div>
+							</div>
+						</div> -->
+
+
+
+						<div class="container">
+							<hr>
+							<center><h3>Testimonials</h3></center><br>
+							<div class="row-fluid">
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Dharshan R.,Executive at GS</h3>
+											<div class="popover-content">
+												<p>[Our attorney] did a great job helping out with my contract - quick and painless experience! She understands the SaaS space well and pointed out the necessary items that I will need to include.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Mina M,VP at Global Asset</h3>
+											<div class="popover-content">
+												<p>[My lawyer] was extremely knowledgeable about real estate law and super easy to talk to. She took the time, asked questions and really understood my needs. I will definitely be back!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Sarah & Rob, Retail Franchisees</h3>
+											<div class="popover-content">
+												<p>Our experience with legalczar and [our lawyer] has been great. He was able to address our concerns, assist us with our formation, and been enthusiastic about our project. Thankyou so much legalczar!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<br><br>
+
+							<div class="row-fluid">
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Dharshan R.,Executive at GS</h3>
+											<div class="popover-content">
+												<p>[Our attorney] did a great job helping out with my contract - quick and painless experience! She understands the SaaS space well and pointed out the necessary items that I will need to include.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Mina M,VP at Global Asset</h3>
+											<div class="popover-content">
+												<p>[My lawyer] was extremely knowledgeable about real estate law and super easy to talk to. She took the time, asked questions and really understood my needs. I will definitely be back!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="span4">
+									<div class="demo-popovers">
+										<div class="popover right">
+											<div class="arrow"></div>
+											<h3 class="popover-title">Sarah & Rob, Retail Franchisees</h3>
+											<div class="popover-content">
+												<p>Our experience with legalczar and [our lawyer] has been great. He was able to address our concerns, assist us with our formation, and been enthusiastic about our project.  Thankyou so much legalczar!</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+
+
+						{% endblock %}
 
