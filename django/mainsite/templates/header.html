@@ -46,7 +46,7 @@
 					{% if request.user.is_authenticated %}
 					<ul class="nav pull-right">
 						<li>
-							<a style="padding:16px 18px 11px 0px;" href="#fakelink">{% avatar user 30 %} &nbsp; {{ request.user }} 
+							<a style="padding:16px 18px 11px 0px;" href="/app/profile/{{ request.user.username }}">{% avatar user 30 %} &nbsp; {{ request.user }} 
 								<!-- <a href="/app/accounts/logout" class="btn btn-primary" >Logout</a> -->
 							</a>
 						</li>
@@ -72,9 +72,9 @@
 									<ul class="dropdown-menu">
 										<li><a href="#fakelink">Action</a></li>
 										<li><a href="#fakelink">Another action</a></li>
-										<li><a href="#fakelink">Something else here</a></li>
+										<li><a href="/app/profile/edit">Edit Profile</a></li>
 										<li class="divider"></li>
-										<li><a href="#fakelink">Separated link</a></li>
+										<li><a href="/app/accounts/logout">Logout</a></li>
 									</ul>
 								</li>
 

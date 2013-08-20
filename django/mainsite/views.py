@@ -39,18 +39,25 @@ class MessageMixin():
         # return obj
         return self.request.user.get_profile()
 
+
        
 class ProfileEdit(MessageMixin,UpdateView):
     model=LawyerProfile
     form_class = ProfileEditForm
     template_name = "mainsite/profile_edit.html"
-    success_url = "app/profile/"
+    success_url = "/app/profile/"
     redirect_field_name = None
-profile_edit = ProfileEdit.as_view()
+
+profile_edit = login_required(ProfileEdit.as_view())
+
+
+@login_required    
+def profile_view(request,username=''):
     
-def profile_view(request,username):
-    
-    user = User.objects.get(username=username);
+    if(username==''):
+        user = request.user
+    else:
+        user = User.objects.get(username=username);
     profile = user.get_profile()
 
     return render(request, 'mainsite/profile.html', {'domain':request.META['HTTP_HOST'], 'profile':profile})

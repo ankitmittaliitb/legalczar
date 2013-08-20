@@ -205,7 +205,7 @@ SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_AUTO_SIGNUP = False
 
 LOGIN_URL = '/app/accounts/login/' 
-LOGIN_REDIRECT_URL = "/app/profile/edit" 
+LOGIN_REDIRECT_URL = "/app/profile/" 
 ACCOUNT_LOGOUT_REDIRECT_URL = '/app/'
 AUTH_PROFILE_MODULE = 'mainsite.baseprofile'
 
