@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/mainsite/css/style.css">
 	<link rel="stylesheet" type="text/css"  href="/static/mainsite/css/scroll.css"/>  
 	<!-- <link rel="stylesheet" type="text/css"  href="/static/mainsite/css/tab.css"/>   -->
-
+    <link href="/static/mainsite/css/colorbox.css" rel="stylesheet">
 	<!-- Loading Bootstrap -->
 	<link href="/static/mainsite/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<!-- <link href="/static/mainsite/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
@@ -80,17 +80,27 @@
     	<script src="/static/mainsite/js/jquery.placeholder.js"></script>
     	<script src="/static/mainsite/js/jquery.stacktable.js"></script>
     	<script src="/static/mainsite/js/application.js"></script>
+        <script src="/static/mainsite/js/jquery.colorbox.js"></script>
 
 
     	<!-- <script type="text/javascript" src="/static/mainsite/js/jquery.jcarousel.min.js" /> -->
-    	<script src="/static/mainsite/js/ld2.js"></script>
+        {% block olark %}
+    	   <script src="/static/mainsite/js/ld2.js"></script>
+        {% endblock %}
     	<!-- JS ends  -->
 
     	<!-- begin olark code -->
 
     	<!-- <a href="https://www.olark.com/site/9913-410-10-4631/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a> -->
     	<!-- end olark code -->
-
-
+        
+        <script>
+            $(document).ready(function(){
+              
+                $("#review").colorbox({iframe:true, width:"40%", height:"60%"});
+      
+            });
+        </script>
+        
     </body>
     </html>

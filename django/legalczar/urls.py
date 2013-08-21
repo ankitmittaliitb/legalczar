@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 import os.path
 import settings
+from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -25,7 +26,7 @@ urlpatterns = patterns('',
     url(append+r'profile/', 'mainsite.views.profile_view'),
     url(append+r'review/(?P<lawyer>.+)/', 'mainsite.views.review'),
     url(append+r'avatar/', include('avatar.urls')),
-
+    url(append+r'(?P<page_name>about|faq|press|close)/$', TemplateView.as_view(template_name="mainsite/close.html")),
 )
 
 if os.path.isfile('local.pyc'):    

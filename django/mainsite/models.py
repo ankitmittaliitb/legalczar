@@ -51,6 +51,9 @@ class BaseProfile(models.Model):
         return ('profiles_profile_detail', (), { 'username': self.user.username })
     get_absolute_url = models.permalink(get_absolute_url)
 
+    def get_fields(self):
+        return [(field.verbose_name, field._get_val_from_obj(self)) for field in self.__class__._meta.fields]
+
 class PracticeArea(models.Model):
     area = models.CharField(max_length=250)
     

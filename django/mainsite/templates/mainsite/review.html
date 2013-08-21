@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
-{% block head_title %}Edit Profile | LegalCzar {% endblock %}
-
+{% block header %} {% endblock %}
 {% block content %}
 
-<div id="edit_profile">
-<fieldset>
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <p><input type="submit" value="Give Review!" /></p>
-</fieldset>
-</form>
+<div class="modal-header">
+	<!-- <a href="#" class="close" data-dismiss="modal">×</a> -->
+	<h3 id="prompt">Review</h3>
+</div>
+<div class="alert alert-success">
+	<form action="" method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<p><input type="submit" value="Give Review!" class="btn btn-primary" /></p>
+
+	</form>
 </div>
 
-
 {% endblock %}
+{% block footer %} {% endblock %}
+{% block olark %} {% endblock %}

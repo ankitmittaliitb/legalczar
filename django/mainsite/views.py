@@ -8,6 +8,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView, CreateView
+from django.views.generic.detail import DetailView
+
 import random
 
 def home(request ):
@@ -61,11 +63,18 @@ def profile_view(request,username=''):
     return render(request, 'mainsite/profile.html', {'domain':request.META['HTTP_HOST'], 'profile':profile})
 
 
+# class ProfileView(DetailView):
+#     model=BaseProfile
+#     # form_class = ProfileEditForm
+#     template_name = "mainsite/profile.html"        
+
+# profile_view = login_required(ProfileView.as_view())
+
 class ReviewCreate(CreateView):
     model = Review
     form_class = ReviewForm    
     template_name = "mainsite/review.html"
-    success_url = "/app/profile/"
+    success_url = "/app/close/"
     redirect_field_name=None
 
     def get_form(self, form_class):

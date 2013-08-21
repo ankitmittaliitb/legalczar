@@ -11,12 +11,10 @@
 			<!-- <div class="dialog"> -->
 				<!-- {% avatar profile.user 200 "img-rounded" %} -->
 				<!-- <p class="img-comment"><strong>{{ profile.user.first_name }} {{ profile.user.last_name }}</strong> </p> -->
-			<!-- </div> -->
-
-		
+			<!-- </div> -->		
 
 		<ul class="nav nav-list nav-list-vivid">
-		<li class="nav-header"> {% avatar request.user 200 "img-rounded" %} <a target="_blank" href="{% url 'avatar_change' %}">Change Profile Picture</a></li>
+		<li class="nav-header"> {% avatar request.user 200 "img-rounded" %} <a id='review' href="{% url 'avatar_change' %}">Change Profile Picture</a></li>
 		<li>  </li>
 		<li class="divider"></li>
 			<li class="nav-header">{{ request.user.first_name }}'s Details <i class="icon-map-marker"></i></li>
