@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block head_title %}Edit Profile | LegalCzar {% endblock %}
+{% block head_title %}{{ profile.user.first_name }}'s Profile | LegalCzar {% endblock %}
 
 {% block content %}
 
@@ -23,6 +23,10 @@
 
 			<li><span class="fui-location pvs prm"></span>{{ profile.city }}, {{ profile.state }}</li>
 			<li><span class="fui-check-inverted pvs prm"></span>Verified </li>
+
+			
+
+			<li><a href="/app/review/{{ profile.user.username }}/" class="btn btn-primary">Review</a> </li>
 				<!-- <a href="#fakelink"> -->					
 					<!-- <span class="nav-counter">19</span> -->
 				<!-- </a> -->

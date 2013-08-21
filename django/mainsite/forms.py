@@ -121,7 +121,7 @@ class ProfileEditForm(forms.ModelForm):
         
         widgets = {
         	'state':INStateSelect(),        	
-        	# # 'gender': forms.RadioSelect(),
+        	'gender': forms.RadioSelect(),
             # 'name': Textarea(attrs={'cols': 80, 'rows': 20}),
         }
 
@@ -131,23 +131,24 @@ class ProfileEditForm(forms.ModelForm):
     	self.user = kwargs['instance'].user
     	user_kwargs = kwargs.copy()
     	user_kwargs['instance']=self.user
-    	self.uf=UserForm(*args,**user_kwargs)
+    	self.uf=UserForm(*args,**user_kwargs)         
 
     	self.profile = kwargs['instance'].profile
     	lcf_kwargs = kwargs.copy()
 
-    	if (self.profile == 'client'):    		
-    		self.lcf=ClientForm(*args,**user_kwargs)
+    	if (self.profile == 'client'):
+            lcf_kwargs['instance'] = kwargs['instance'].clientprofile    		
+            self.lcf = ClientForm(*args,**lcf_kwargs)
     	else:
-    		self.lcf=LawyerForm(*args,**user_kwargs)
-
+            lcf_kwargs['instance'] = kwargs['instance'].lawyerprofile 
+            self.lcf = LawyerForm(*args,**lcf_kwargs)
 
     	super(ProfileEditForm, self).__init__(*args, **kwargs)
         self.fields.update(self.uf.fields)
         self.initial.update(self.uf.initial)
 
         self.fields.update(self.lcf.fields)
-        self.initial.update(self.lcf.initial)
+        self.initial.update(self.lcf.initial)        
 
         field_order = ['username', 'first_name',
             'last_name',
@@ -167,3 +168,21 @@ class ProfileEditForm(forms.ModelForm):
         self.uf.save(commit)
         self.lcf.save(commit)
         return super(ProfileEditForm, self).save(commit)
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        exclude = ['user', 'lawyer', 'status']
+
+    # def __init__(self, *args, **kwargs):
+    #     self.lawyer = User.objects.get(username='shashank')
+    #     self.user = kwargs['instance'].user
+    #     super(ReviewForm, self).__init__(*args, **kwargs)
+        
+        #self.initial.update(lawyer=lawyer)
+
+    # def save(self):#, commit=True):       
+    #     review = Review(user=self.user,lawyer=self.lawyer,subject=self.cleaned_data['subject'],review=self.cleaned_data['review'], rating=self.cleaned_data['rating'])
+    #     review.save()
+    # 

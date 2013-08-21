@@ -1,19 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-	<div class="jumbotron" >
+<div class="dialog" style="background-image:url(http://lasclev.org/wp-content/uploads/2010/11/img-banner-benefits.jpg); background-size:cover !important; width: 100%; background-position: 0 0 !important; text-align: left; color:white">
+	<div class="jumbotron container"  >
 		<br><br>
-		<h1>Work with lawyers online.</h1>
-		<p class="lead">Find and work with the right lawyer for you, without leaving home.</p>
-
-		<ul class="nav nav-tabs nav-append-content">
-			<li class="active"><a href="#tab1">Browse Lawyers</a></li>
-			<li><a href="#tab2">Get A Call</a></li>
-			<li><a href="#tab3">Submit a Question</a></li>
+		<div class="alert alert-success" style="background: rgba(0,0,0, .5); color:white; border: 0px solid" /> <!-- <opacity:0.6; filter:alpha(opacity=60);"> -->
+		<h1 >Work with lawyers online.</h1>
+		<p class="lead" >Find and work with the right lawyer for you, without leaving home.</p>
+				
+		<ul class="nav nav-tabs nav-append-content" >
+			<li style="background: rgba(0,0,0,.7);" class="active"><a href="#tab1" >Browse Lawyers</a></li>
+			<li style="background: rgba(0,0,0,.7);"><a href="#tab2">Get A Call</a></li>
+			<li style="background: rgba(0,0,0,.7);"><a href="#tab3">Submit a Question</a></li>
 
 		</ul>
-		<div class="tab-content" style="overflow:visible; width:60%">
+
+		<div class="tab-content" style="overflow:visible; ">
 			<div class="tab-pane active" id="tab1">
 				<div class="row-fluid">
 					<div class="span4">
@@ -51,7 +53,7 @@
 					</div> 
 					<div class="span1"></div>
 					<div class="span2">
-						<a href="#fakelink" class="btn btn-small btn-block btn-inverse">Search</a>
+						<a href="#fakelink" class="btn btn-small btn-block btn-success" >Search</a>
 					</div>   
 				</div>
 			</div>
@@ -65,6 +67,7 @@
 			<div class="tab-pane" id="tab3">
 				<p>Coming Soon!</p>
 			</div>
+		</div> <!--Tab content ends here -->
 		</div>
 		<br><br>
 	</div>
@@ -319,7 +322,7 @@
 
 
 
-						<div class="container">
+						<div class="container mbl">
 							<hr>
 							<center><h3>Testimonials</h3></center><br>
 							<div class="row-fluid">
@@ -403,7 +406,6 @@
 
 							</div>
 						</div>
-
 
 						{% endblock %}
 

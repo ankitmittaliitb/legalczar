@@ -1,13 +1,13 @@
 # Create your views here.
 from django.http import HttpResponse
 from mainsite.models import *
-from mainsite.forms import ProfileEditForm
+from mainsite.forms import ProfileEditForm, ReviewForm
 from django.template import RequestContext, loader
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, CreateView
 import random
 
 def home(request ):
@@ -38,11 +38,9 @@ class MessageMixin():
         #     raise Http404
         # return obj
         return self.request.user.get_profile()
-
-
        
 class ProfileEdit(MessageMixin,UpdateView):
-    model=LawyerProfile
+    model=BaseProfile
     form_class = ProfileEditForm
     template_name = "mainsite/profile_edit.html"
     success_url = "/app/profile/"
@@ -62,55 +60,36 @@ def profile_view(request,username=''):
 
     return render(request, 'mainsite/profile.html', {'domain':request.META['HTTP_HOST'], 'profile':profile})
 
-    """ def form_valid(self, form):
-        success_url = self.get_success_url()
-        return form.login(self.request, redirect_url=success_url)
 
-    def get_success_url(self):
-        # Explicitly passed ?next= URL takes precedence
-        ret = (get_next_redirect_url(self.request,
-                                     self.redirect_field_name)
-               or self.success_url)
-        return ret
+class ReviewCreate(CreateView):
+    model = Review
+    form_class = ReviewForm    
+    template_name = "mainsite/review.html"
+    success_url = "/app/profile/"
+    redirect_field_name=None
 
-    def get_context_data(self, **kwargs):
-        ret = super(LoginView, self).get_context_data(**kwargs)
-        ret.update({
-                "signup_url": passthrough_next_redirect_url(self.request,
-                                                            reverse("account_signup"),
-                                                            self.redirect_field_name),
-                "site": Site.objects.get_current(),
-                "redirect_field_name": self.redirect_field_name,
-                "redirect_field_value": self.request.REQUEST.get(self.redirect_field_name),
-                })
-        return ret"""
+    def get_form(self, form_class):
+        form = super(ReviewCreate, self).get_form(form_class)
+        form.instance.lawyer = get_object_or_404(User, username=self.kwargs['lawyer'])
+        form.instance.user = self.request.user
+        return form
 
+review = login_required(ReviewCreate.as_view())
 
+# @login_required
+# def review(request):
+#     data = request.GET
+#     course = get_object_or_404(Course, pk=int(data['course_id']))  
+#     #user = get_object_or_404(User, username__exact=
+#     try:
+#         review = Review(course=course, user=request.user, subject=data['subject'], review=data['review'], 
+#                         rating_overall=int(data['rating_overall']), rating_difficulty=int(data['rating_difficulty']), 
+#                         rating_entertainment=int(data['rating_entertainment']), student_status=data['student_status'] )   
+#         review.save()                        
+#         json = simplejson.dumps( { 'status' : 'done' } )
+#     except Course.DoesNotExist:
+#         raise Http404    
+#     response = HttpResponse(json,content_type='application/json',mimetype='application/json')
+#     response['Access-Control-Allow-Origin'] = "*"
+#     return response
 
-"""
-@login_required
-def page(request, page_id ):
-    try:
-        page = Page.objects.get(pk=page_id)
-    except Page.DoesNotExist:    
-        raise Http404
-    return render(request, 'guide/page.html', {'page': page})
-
-@login_required
-def levelwpage(request, level_id, page_id ):
-    try:
-        level = Level.objects.get(pk=int(level_id))
-        page = Page.objects.filter(level__id=int(level_id)).order_by('sortorder')[int(page_id)-1]         
-    except Page.DoesNotExist:    
-        raise Http404
-    return render(request, 'guide/page.html', {'page': page})
-
-@login_required
-def level(request, level_id):
-    try:
-        level = Level.objects.get(pk=level_id)
-    except Level.DoesNotExist:
-        raise Http404
-    return render(request, 'guide/level.html', {'level': level})
-# Create your views here.
-"""

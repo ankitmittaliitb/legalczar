@@ -31,11 +31,11 @@ class BaseProfile(models.Model):
 
     user = models.OneToOneField(User)
     profile = models.CharField (max_length=10, choices=PROFILE_CHOICES )
-    profile_photo = models.ImageField(upload_to='images/p/', blank = True, null=True)
+    #profile_photo = models.ImageField(upload_to='images/p/', blank = True, null=True)
     landline = models.CharField(max_length=15, blank = True )
     mobile = models.CharField(max_length=15, blank = True)
     # phone_number = models.OneToManyField(PhoneNumber)
-    gender = models.CharField(max_length = 1, choices = GENDER_CHOICE, null = True)
+    gender = models.CharField(max_length = 1, choices = GENDER_CHOICE, null = True, blank=False)
 
     # address = models.OneToOneField(Address)
     
@@ -84,3 +84,32 @@ class ClientProfile(BaseProfile):
 
     def __unicode__(self):
         return unicode(self.user)
+
+class Review(models.Model):   
+    lawyer = models.ForeignKey(User, related_name='reviews')
+    user = models.ForeignKey(User)
+    subject = models.CharField(max_length=250)
+    review = HTMLField(blank=True, null=True)
+    rating = models.FloatField(default=0)
+    pub_date = models.DateTimeField('date published', auto_now=True)
+    status =  models.CharField(max_length=2, choices=STATUS_CHOICES,default='WA')
+    #"age": "4",
+    #"votes": "14",
+    #"votesby": "Gautam, Sanchit and others",
+          
+    def __unicode__(self):
+        return self.subject
+    
+    def get_lawyer(self):
+        return self.lawyer.first_name + ' ' + self.lawyer.last_name
+
+    get_lawyer.short_description = 'Lawyer Name'
+    get_lawyer.admin_order_field = 'lawyer__last_name'
+
+class Search(models.Model):   
+    string = models.CharField(max_length=250)
+    when = models.DateTimeField('date published', auto_now=True)
+    ip = models.CharField(max_length=250,blank=True, null=True)   
+
+    def __unicode__(self):
+        return self.string

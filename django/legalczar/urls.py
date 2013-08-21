@@ -21,8 +21,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(append+r'accounts/', include('allauth.urls')), 
     url(append+r'profile/edit/', 'mainsite.views.profile_edit'),    
-    url(append+r'profile/(?P<username>.+)/', 'mainsite.views.profile_view'),    
+    url(append+r'profile/(?P<username>.+)/', 'mainsite.views.profile_view'),
     url(append+r'profile/', 'mainsite.views.profile_view'),
+    url(append+r'review/(?P<lawyer>.+)/', 'mainsite.views.review'),
     url(append+r'avatar/', include('avatar.urls')),
 
 )
