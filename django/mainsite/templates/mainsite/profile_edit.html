@@ -64,11 +64,72 @@
 
 
 
-			<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <p><input type="submit" value="Update" /></p>
-</fieldset>
-</form>
+	<form action="" method="post">{% csrf_token %}
+            <!--  //old form   {{ form.as_p }} --> 
+ <div class="row-fluid">
+ <div class="control-group small span5">
+ {{ form.username.errors }}         {{ form.username.label_tag }}         {{ form.username }}
+ </div> <div class=span1> </div>
+ <div class="control-group small span5">
+ {{ form.email.errors }}            {{ form.email.label_tag }}            {{ form.email }}
+ </div></div>
+
+
+ <div class="row-fluid">
+ <div class="control-group small span5">
+ {{ form.first_name.errors }}       {{ form.first_name.label_tag }}       {{ form.first_name }}
+ </div> <div class=span1> </div>
+ <div class="control-group small span5">
+ {{ form.last_name.errors }}        {{ form.last_name.label_tag }}        {{ form.last_name }}
+ </div> </div>
+ 
+ 
+ <div class="row-fluid">
+ <div class="span11 control-group small pull-left">
+ {{ form.street_line1.errors }}      {{ form.street_line1.label_tag }}    {{ form.street_line1 }}
+ </div></div>
+ <div class="row-fluid">
+ <div class=" span11 pull-left control-group small">
+ {{ form.street_line2.errors }}      {{ form.street_line2.label_tag }}    {{ form.street_line2 }}
+ </div></div>
+
+ <div class="row-fluid">
+ <div class="control-group small span5">
+ {{ form.city.errors }}     {{ form.city.label_tag }}     {{ form.city }}
+ </div> <div class=span1> </div>
+ <div class="control-group small span5">
+ {{ form.zipcode.errors }}      {{ form.zipcode.label_tag }}    {{ form.zipcode }}
+ </div> </div>
+
+ <div class="row-fluid">
+ <div class="control-group small span5">
+ {{ form.landline.errors }}     {{ form.landline.label_tag }}     {{ form.landline }}
+ </div> <div class=span1> </div>
+ <div class="control-group small span5">
+ {{ form.mobile.errors }}      {{ form.mobile.label_tag }}    {{ form.mobile }}
+ </div> </div>
+ 
+ <div class="row-fluid">
+ <div class="control-group small span5">
+ {{ form.gender.errors }}      {{ form.gender.label_tag }}    {{ form.gender }}
+ </div> <div class=span1> </div>
+ <div class="control-group small span5">
+ {{ form.state.errors }}     {{ form.state.label_tag }}     {{ form.state }}
+ </div>
+
+ </div>
+ 
+<!--        {% for profile_field in form %}
+            <div class="fieldWrapper">
+                {{  forloop.counter }}
+                {{ profile_field.errors }}
+                {{ profile_field.label_tag }}  {{ profile_field }}
+            </div>
+        {% endfor %} -->
+    
+            <p><input type="submit" value="Update" /></p>
+            </fieldset>
+    </form>
 
 
 		
@@ -77,6 +138,6 @@
 
 </div>
 
-
+<!-- <pre>{% filter force_escape %}{% debug %}{% endfilter %}</pre> -->
 {% endblock %}
 

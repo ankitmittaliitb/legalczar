@@ -64,18 +64,47 @@
 		</div>
 		<div class="span8">
 
-			<h2>
-				{{ profile.user.first_name }} {{ profile.user.last_name }}
-				
+			<h2> 
+<!--    		{{ profile.user.first_name }} {{ profile.user.last_name }} -->
 			</h2>
+<h3>
+				                {{ profile.user.username}} 
+</h3>
+			
+<p class="lead orange"> 
+<!-- <span class="fui-user"></span> -->
+{{ profile.user.get_full_name}}, 
+{% if profile.gender == 'M' %}
+     Male
+{% else %}
+     Female
+{% endif %}
+</p>
+<blockquote><p class="greensea">
+<span class="fui-location"> </span></br>
+{{ profile.street_line1 }}, {{ profile.street_line2 }}
+<br>
+{{ profile.city }} - {{ profile.zipcode }}
+<br>
+{{ profile.state }}
+</p></blockquote>
+
+
+<blockquote><p class="greensea">
+<span class="fui-mic"></span></br>
+    {{ profile.landline }}
+<br>
+    {{ profile.mobile }}
+</p></blockquote>
+<!--
 			{% for name, value in profile.get_fields %}
 			<div class="row-fluid">
 		          <div class="span4"><h5>{{ name }}:</h5></div>
 
-		          <div class="span8 lead">{{ value|default:"Not available" }} </div>
+		          <div class="span8 lead">{{ value|default:" -- " }} </div>
 		       </div>
 			{% endfor %}
-
+-->
 			{% if profile.profile == 'lawyer' %}
 				{% for name, value in profile.lawyerprofile.get_fields %}
 				
